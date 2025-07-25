@@ -1,0 +1,1129 @@
+TableID,TableName,Name,DataType,Size,Nullable,Description,IsInCSV,Scrambled
+9001000,Area,AreaId,integer,32,False,The unique ID of the area,True,False
+9001000,Area,CountryCode,string,10,False,The country code of the area,True,False
+9001000,Area,Name,string,50,False,The display name of the area,True,False
+9001000,Area,Competitions,Competition[],,True,The competitions that are associated with and/or played in the area,True,False
+9002000,Competition,CompetitionId,integer,32,False,The unique ID of the competition/league,True,False
+9002000,Competition,AreaId,integer,32,False,The unique ID of the area where this competition/league is played,True,False
+9002000,Competition,AreaName,string,50,True,The display name of the area where this competition/league is played,True,False
+9002000,Competition,Name,string,50,False,The display name of the competition/league,True,False
+9002000,Competition,Gender,string,10,True,Indicates the gender of the players on this team (possible values: Male; Female),True,False
+9002000,Competition,Type,string,10,True,The type of this competition/league (possible values: Club; International),True,False
+9002000,Competition,Format,string,50,True,The format of the competition/league (possible values: Domestic League; International Cup),True,False
+9002000,Competition,Seasons,Season[],,True,The seasons associated with this competition/league,True,False
+9002000,Competition,Key,string,5,True,The unique string key of the competition/league,True,False
+9003000,Season,SeasonId,integer,32,False,The unique ID of the season,True,False
+9003000,Season,CompetitionId,integer,32,False,The unique ID of the competition,True,False
+9003000,Season,Season,integer,32,False,The soccer regular season for which these totals apply,True,False
+9003000,Season,Name,string,50,False,The display name of the season (example: 2017/2018; 2018-19; etc),True,False
+9003000,Season,CompetitionName,string,50,False,The display name of the competition associated with this season,True,False
+9003000,Season,StartDate,date,,True,The start date of the season (UTC),True,False
+9003000,Season,EndDate,date,,True,The end date of the season (UTC),True,False
+9003000,Season,CurrentSeason,boolean,,False,Indicates whether or not this season is the current season of the competition,True,False
+9003000,Season,Rounds,Round[],,True,The rounds associated with this season,True,False
+9004000,Round,RoundId,integer,32,False,The unique ID of the round,True,False
+9004000,Round,SeasonId,integer,32,False,The unique ID of the season this round is associated with,True,False
+9004000,Round,Season,integer,32,False,The soccer season for which these totals apply,True,False
+9004000,Round,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9004000,Round,Name,string,50,False,The display name of the round (examples: Regular Season; Semi-finals; Final; etc),True,False
+9004000,Round,Type,string,50,True,The type of this round. Possible values include: Cup; Table,True,False
+9004000,Round,StartDate,date,,True,The start date of the round (UTC),True,False
+9004000,Round,EndDate,date,,True,The end date of the round (UTC),True,False
+9004000,Round,CurrentWeek,integer,32,True,The current week that this round is in,True,False
+9004000,Round,CurrentRound,boolean,,False,Indicates whether or not this round is the current round of the competition/season,True,False
+9004000,Round,Games,Game[],32,True,Games that are part of this round,False,False
+9004000,Round,Standings,Standing[],32,True,Standing records associated with this round,False,False
+9004000,Round,TeamSeasons,TeamSeason[],32,True,Team Stat records associated with this round.,False,False
+9004000,Round,PlayerSeasons,PlayerSeason[],32,True,Player Season stat records associated with this round,False,False
+9005000,Team,TeamId,integer,32,False,The auto-generated unique ID of the Team,True,False
+9005000,Team,AreaId,integer,32,True,The unique ID of the team's current home arena,True,False
+9005000,Team,VenueId,integer,32,True,The unique ID of the team's current home venue,True,False
+9005000,Team,[Key],string,10,True,Abbreviation of the team (e.g. LIV; ARS; etc.),True,False
+9005000,Team,Name,string,50,False,The mascot of the team (e.g. The Reds; The Gunners; etc.),True,False
+9005000,Team,FullName,string,100,True,The full name of the team (e.g. Liverpool Football Club; Arsenal Football Club; etc.),True,False
+9005000,Team,Active,boolean,,False,Whether or not this team is active,True,False
+9005000,Team,AreaName,string,50,True,The area name of the home team,True,False
+9005000,Team,VenueName,string,50,True,The venue name of the home team,True,False
+9005000,Team,Gender,string,10,True,Indicates the gender of the players on this team (possible values: Make; Female),True,False
+9005000,Team,Type,string,10,True,The type of this team. Possible values: Club; National,True,False
+9005000,Team,Address,string,100,True,The address of the home team,True,False
+9005000,Team,City,string,50,True,The city of the home team,True,False
+9005000,Team,Zip,string,50,True,The zip code of the home team,True,False
+9005000,Team,Phone,string,50,True,The phone number of the home team,True,False
+9005000,Team,Fax,string,50,True,The fax number of the home team,True,False
+9005000,Team,Website,string,50,True,The website address of the home team,True,False
+9005000,Team,Email,string,50,True,The email of the home team,True,False
+9005000,Team,Founded,integer,32,True,The year the team was founded (e.g. 1950; 1960; etc.),True,False
+9005000,Team,ClubColor1,string,50,True,The primary color of this team's logo/uniform/branding,True,False
+9005000,Team,ClubColor2,string,50,True,The secondary color of this team's logo/uniform/branding,True,False
+9005000,Team,ClubColor3,string,50,True,The tertiary color of this team's logo/uniform/branding,True,False
+9005000,Team,Nickname1,string,50,True,A nickname for this team,True,False
+9005000,Team,Nickname2,string,50,True,A nickname for this team,True,False
+9005000,Team,Nickname3,string,50,True,A nickname for this team,True,False
+9005000,Team,WikipediaLogoUrl,string,250,True,The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use),True,False
+9005000,Team,WikipediaWordMarkUrl,string,250,True,The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use),True,False
+9005000,Team,GlobalTeamId,integer,32,False,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9006000,Venue,VenueId,integer,32,False,The unique ID of the venue,True,False
+9006000,Venue,Name,string,50,False,The full name of the venue,True,False
+9006000,Venue,Address,string,100,True,The address where the venue is located,True,False
+9006000,Venue,City,string,50,True,The city where the venue is located,True,False
+9006000,Venue,Zip,string,50,True,The zip code of the venue,True,False
+9006000,Venue,Country,string,50,True,The 2-digit country code where the venue is located,True,False
+9006000,Venue,[Open],boolean,,False,Indicates whether this venue is actively used,True,False
+9006000,Venue,Opened,integer,32,True,The year the venue opened (e.g. 1950; 1960; etc),True,False
+9006000,Venue,Nickname1,string,100,True,A nickname for this venue,True,False
+9006000,Venue,Nickname2,string,100,True,A nickname for this venue,True,False
+9006000,Venue,Capacity,integer,32,True,The estimated seating capacity of the venue,True,False
+9006000,Venue,Surface,string,50,True,The playing surface of the stadium (Grass or Artificial),True,False
+9006000,Venue,GeoLat,decimal,32,True,The geographic latitude coordinate of this venue.,True,False
+9006000,Venue,GeoLong,decimal,32,True,The geographic longitude coordinate of this venue.,True,False
+9007000,SeasonTeam,SeasonTeamId,integer,32,False,Unique ID of this season/team combination,True,False
+9007000,SeasonTeam,SeasonId,integer,32,False,Unique ID of the season associated with this record,True,False
+9007000,SeasonTeam,TeamId,integer,32,False,Unique ID of the team associated with this record,True,False
+9007000,SeasonTeam,TeamName,string,50,False,The name of the team associated with this record,True,False
+9007000,SeasonTeam,Active,boolean,,False,Whether this team is actively associated with this season,True,False
+9007000,SeasonTeam,Gender,string,10,True,Indicates the gender of the players on this team (possible values: Make; Female),True,False
+9007000,SeasonTeam,Type,string,10,True,The type of this season/team (possible values: Club; National),True,False
+9007000,SeasonTeam,Team,Team,,True,The team details of this season/team association,True,False
+9008000,Game,GameId,integer,32,False,The unique ID of the game.,True,False
+9008000,Game,RoundId,integer,32,False,The RoundId of the round that this game is associated with.,True,False
+9008000,Game,Season,integer,32,False,The calendar year of the season during which this game occurs.,True,False
+9008000,Game,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9008000,Game,Group,string,50,True,The name of the group in which this game occurs. This is used in tournaments / cups.,True,False
+9008000,Game,AwayTeamId,integer,32,True,The TeamId of the away team.,True,False
+9008000,Game,HomeTeamId,integer,32,True,The TeamId of the home team.,True,False
+9008000,Game,VenueId,integer,32,True,The VenueId of the venue.,True,False
+9008000,Game,Day,date,,True,The day that the game is scheduled to be played in UTC.,True,False
+9008000,Game,DateTime,datetime,,True,The date/time that the game is scheduled to be played in UTC.,True,False
+9008000,Game,Status,string,10,True,Indicates the game's status. Possible values include: Scheduled; InProgress; Break; Final; Awarded; Postponed; Canceled; Suspended. If a game is called off before it starts; the Status is set to Postponed; until a new date/time is scheduled; at which point; the DateTime is updated; and the Status is set back to Scheduled. If a game has already started; and temporarily interrupted; it's Status is set to Suspended; until it either resumes; or gets postponed and replayed at a later date. If the game is at halftime; then the Status will be Break. Awarded is used in cases where a game is decided on the so called "green table." That means that a game was decided by the Federation/League to one team for a reason. This can include situations like riots; where the opponent team gets 3:0 win awarded as punishment. Awarded is also used when a club withdraws during the season from the competition then all the remaining matches getting awarded 3:0.,True,False
+9008000,Game,Week,integer,32,True,The week during the season/round in which this game occurs.,True,False
+9008000,Game,Period,string,20,True,The final period of the game. Possible values: Regular = Game ended in 90 minutes of regular time; ExtraTime = Game ended in extra time / overtime; PenaltyShootout = Game finished in penalty shootout time,True,False
+9008000,Game,Clock,integer,32,True,The clock for the game if it is in progress. If the games hasn't started or the game is over; then this will be NULL.,True,False
+9008000,Game,Winner,string,10,True,The winner of the game. Possible values include: AwayTeam; HomeTeam; Draw,True,True
+9008000,Game,VenueType,string,10,True,Indicates home field advantage. Possible values include: Home Away; Neutral,True,False
+9008000,Game,AwayTeamKey,string,10,True,The abbreviation of the away team.,True,False
+9008000,Game,AwayTeamName,string,50,True,The name of the away team.,True,False
+9008000,Game,AwayTeamCountryCode,string,10,True,The country code of the away team.,True,False
+9008000,Game,AwayTeamScore,integer,32,True,The final score of the away team.,True,True
+9008000,Game,AwayTeamScorePeriod1,integer,32,True,The first period score of the away team.,True,True
+9008000,Game,AwayTeamScorePeriod2,integer,32,True,The second period score of the away team.,True,True
+9008000,Game,AwayTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the away team (if applicable).,True,True
+9008000,Game,AwayTeamScorePenalty,integer,32,True,The penalty shootout score of the away team (if applicable).,True,True
+9008000,Game,HomeTeamKey,string,10,True,The abbreviation of the home team.,True,False
+9008000,Game,HomeTeamName,string,50,True,The name of the home team.,True,False
+9008000,Game,HomeTeamCountryCode,string,10,True,The country code of the home team.,True,False
+9008000,Game,HomeTeamScore,integer,32,True,The final score of the home team.,True,True
+9008000,Game,HomeTeamScorePeriod1,integer,32,True,The first period score of the home team.,True,True
+9008000,Game,HomeTeamScorePeriod2,integer,32,True,The second period score of the home team.,True,True
+9008000,Game,HomeTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the home team (if applicable).,True,True
+9008000,Game,HomeTeamScorePenalty,integer,32,True,The penalty shootout score of the home team (if applicable).,True,True
+9008000,Game,HomeTeamMoneyLine,integer,32,True,Payout on a bet that the home team wins.,True,True
+9008000,Game,AwayTeamMoneyLine,integer,32,True,Payout on a bet that the away team wins.,True,True
+9008000,Game,DrawMoneyLine,integer,32,True,Payout on a bet that the game is a draw.,True,True
+9008000,Game,PointSpread,decimal,32,True,Point spread for the home team. This is updated once daily at 4:00 AM ET.,True,True
+9008000,Game,HomeTeamPointSpreadPayout,integer,32,True,Payout if the home team beats the spread. This is updated once daily at 4:00 AM ET.,True,True
+9008000,Game,AwayTeamPointSpreadPayout,integer,32,True,Payout if the away team beats the spread. This is updated once daily at 4:00 AM ET.,True,True
+9008000,Game,OverUnder,decimal,32,True,Over/Under total goals for the game. This is updated once daily at 4:00 AM ET.,True,True
+9008000,Game,OverPayout,integer,32,True,Payout for the over bet. This is updated once daily at 4:00 AM ET.,True,True
+9008000,Game,UnderPayout,integer,32,True,Payout for the under bet. This is updated once daily at 4:00 AM ET.,True,True
+9008000,Game,Attendance,integer,32,True,The attendance for the game.,True,False
+9008000,Game,Updated,datetime,,True,The timestamp of when this record was updated; based on US Eatern Time (EST/EDT).,True,False
+9008000,Game,UpdatedUtc,datetime,,True,The timestamp of when this record was updated; based on Universal Coordinated Time (UTC).,True,False
+9008000,Game,GlobalGameId,integer,32,False,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9008000,Game,GlobalAwayTeamId,integer,32,True,A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9008000,Game,GlobalHomeTeamId,integer,32,True,A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9008000,Game,ClockExtra,integer,32,True,The added stoppage time minute the game is currently in. Will be null when game is not in stoppage time.,True,False
+9008000,Game,ClockDisplay,string,50,True,A convenient string display of the current clock with format Clock+ClockExtra (ex 90+3),True,False
+9008000,Game,IsClosed,boolean,,True,Indicates whether the game is over and the final score and stats have been verified and closed out,True,False
+9008000,Game,HomeTeamFormation,string,20,True,The formation for the home team (4-4-2; 4-3-3; etc.). ,True,False
+9008000,Game,AwayTeamFormation,string,20,True,The formation for the away team (4-4-2; 4-3-3; etc.),True,False
+9008000,Game,PlayoffAggregateScore,PlayoffAggregateScore,,True,Aggregate scoring information for 2-leg/home-and-home games (i.e. Champions League Round of 16).  Team A is determined by the first leg’s home team.,True,False
+9045000,ScoreBasic,Period,string,20,True,The final period of the game. Possible values: Regular = Game ended in 90 minutes of regular time; ExtraTime = Game ended in extra time / overtime; PenaltyShootout = Game finished in penalty shootout time,True,False
+9045000,ScoreBasic,Clock,integer,32,True,The clock for the game if it is in progress. If the games hasn't started or the game is over; then this will be NULL.,True,False
+9045000,ScoreBasic,GameId,integer,32,False,The unique ID of the game.,True,False
+9045000,ScoreBasic,RoundId,integer,32,False,The RoundId of the round that this game is associated with.,True,False
+9045000,ScoreBasic,Season,integer,32,False,The calendar year of the season during which this game occurs.,True,False
+9045000,ScoreBasic,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9045000,ScoreBasic,Group,string,50,True,The name of the group in which this game occurs. This is used in tournaments / cups.,True,False
+9045000,ScoreBasic,AwayTeamId,integer,32,True,The TeamId of the away team.,True,False
+9045000,ScoreBasic,HomeTeamId,integer,32,True,The TeamId of the home team.,True,False
+9045000,ScoreBasic,VenueId,integer,32,True,The VenueId of the venue.,True,False
+9045000,ScoreBasic,Day,date,,True,The day that the game is scheduled to be played in UTC.,True,False
+9045000,ScoreBasic,DateTime,datetime,,True,The date/time that the game is scheduled to be played in UTC.,True,False
+9045000,ScoreBasic,Status,string,10,True,Indicates the game's status. Possible values include: Scheduled; InProgress; Break; Final; Awarded; Postponed; Canceled; Suspended. If a game is called off before it starts; the Status is set to Postponed; until a new date/time is scheduled; at which point; the DateTime is updated; and the Status is set back to Scheduled. If a game has already started; and temporarily interrupted; it's Status is set to Suspended; until it either resumes; or gets postponed and replayed at a later date. If the game is at halftime; then the Status will be Break. Awarded is used in cases where a game is decided on the so called "green table." That means that a game was decided by the Federation/League to one team for a reason. This can include situations like riots; where the opponent team gets 3:0 win awarded as punishment. Awarded is also used when a club withdraws during the season from the competition then all the remaining matches getting awarded 3:0.,True,False
+9045000,ScoreBasic,Week,integer,32,True,The week during the season/round in which this game occurs.,True,False
+9045000,ScoreBasic,Winner,string,10,True,The winner of the game. Possible values include: AwayTeam; HomeTeam; Draw,True,True
+9045000,ScoreBasic,VenueType,string,10,True,Indicates home field advantage. Possible values include: Home Away; Neutral,True,False
+9045000,ScoreBasic,AwayTeamKey,string,10,True,The abbreviation of the away team.,True,False
+9045000,ScoreBasic,AwayTeamName,string,50,True,The name of the away team.,True,False
+9045000,ScoreBasic,AwayTeamCountryCode,string,10,True,The country code of the away team.,True,False
+9045000,ScoreBasic,AwayTeamScore,integer,32,True,The final score of the away team.,True,True
+9045000,ScoreBasic,AwayTeamScorePeriod1,integer,32,True,The first period score of the away team.,True,True
+9045000,ScoreBasic,AwayTeamScorePeriod2,integer,32,True,The second period score of the away team.,True,True
+9045000,ScoreBasic,AwayTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the away team (if applicable).,True,True
+9045000,ScoreBasic,AwayTeamScorePenalty,integer,32,True,The penalty shootout score of the away team (if applicable).,True,True
+9045000,ScoreBasic,HomeTeamKey,string,10,True,The abbreviation of the home team.,True,False
+9045000,ScoreBasic,HomeTeamName,string,50,True,The name of the home team.,True,False
+9045000,ScoreBasic,HomeTeamCountryCode,string,10,True,The country code of the home team.,True,False
+9045000,ScoreBasic,HomeTeamScore,integer,32,True,The final score of the home team.,True,True
+9045000,ScoreBasic,HomeTeamScorePeriod1,integer,32,True,The first period score of the home team.,True,True
+9045000,ScoreBasic,HomeTeamScorePeriod2,integer,32,True,The second period score of the home team.,True,True
+9045000,ScoreBasic,HomeTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the home team (if applicable).,True,True
+9045000,ScoreBasic,HomeTeamScorePenalty,integer,32,True,The penalty shootout score of the home team (if applicable).,True,True
+9045000,ScoreBasic,Updated,datetime,,True,The timestamp of when this record was updated; based on US Eatern Time (EST/EDT).,True,False
+9045000,ScoreBasic,UpdatedUtc,datetime,,True,The timestamp of when this record was updated; based on Universal Coordinated Time (UTC).,True,False
+9045000,ScoreBasic,GlobalGameId,integer,32,False,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9045000,ScoreBasic,GlobalAwayTeamId,integer,32,True,A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9045000,ScoreBasic,GlobalHomeTeamId,integer,32,True,A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9045000,ScoreBasic,IsClosed,boolean,,True,Indicates whether the game is over and the final score and stats have been verified and closed out,True,False
+9045000,ScoreBasic,PlayoffAggregateScore,PlayoffAggregateScore,,True,Aggregate scoring information for 2-leg/home-and-home games (i.e. Champions League Round of 16).  Team A is determined by the first leg’s home team.,True,False
+9044000,ScheduleBasic,GameId,integer,32,False,The unique ID of the game.,True,False
+9044000,ScheduleBasic,RoundId,integer,32,False,The RoundId of the round that this game is associated with.,True,False
+9044000,ScheduleBasic,Season,integer,32,False,The calendar year of the season during which this game occurs.,True,False
+9044000,ScheduleBasic,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9044000,ScheduleBasic,Group,string,50,True,The name of the group in which this game occurs. This is used in tournaments / cups.,True,False
+9044000,ScheduleBasic,AwayTeamId,integer,32,True,The TeamId of the away team.,True,False
+9044000,ScheduleBasic,HomeTeamId,integer,32,True,The TeamId of the home team.,True,False
+9044000,ScheduleBasic,VenueId,integer,32,True,The VenueId of the venue.,True,False
+9044000,ScheduleBasic,Day,date,,True,The day that the game is scheduled to be played in UTC.,True,False
+9044000,ScheduleBasic,DateTime,datetime,,True,The date/time that the game is scheduled to be played in UTC.,True,False
+9044000,ScheduleBasic,Status,string,10,True,Indicates the game's status. Possible values include: Scheduled; InProgress; Break; Final; Awarded; Postponed; Canceled; Suspended. If a game is called off before it starts; the Status is set to Postponed; until a new date/time is scheduled; at which point; the DateTime is updated; and the Status is set back to Scheduled. If a game has already started; and temporarily interrupted; it's Status is set to Suspended; until it either resumes; or gets postponed and replayed at a later date. If the game is at halftime; then the Status will be Break. Awarded is used in cases where a game is decided on the so called "green table." That means that a game was decided by the Federation/League to one team for a reason. This can include situations like riots; where the opponent team gets 3:0 win awarded as punishment. Awarded is also used when a club withdraws during the season from the competition then all the remaining matches getting awarded 3:0.,True,False
+9044000,ScheduleBasic,Week,integer,32,True,The week during the season/round in which this game occurs.,True,False
+9044000,ScheduleBasic,Winner,string,10,True,The winner of the game. Possible values include: AwayTeam; HomeTeam; Draw,True,True
+9044000,ScheduleBasic,VenueType,string,10,True,Indicates home field advantage. Possible values include: Home Away; Neutral,True,False
+9044000,ScheduleBasic,AwayTeamKey,string,10,True,The abbreviation of the away team.,True,False
+9044000,ScheduleBasic,AwayTeamName,string,50,True,The name of the away team.,True,False
+9044000,ScheduleBasic,AwayTeamCountryCode,string,10,True,The country code of the away team.,True,False
+9044000,ScheduleBasic,AwayTeamScore,integer,32,True,The final score of the away team.,True,True
+9044000,ScheduleBasic,AwayTeamScorePeriod1,integer,32,True,The first period score of the away team.,True,True
+9044000,ScheduleBasic,AwayTeamScorePeriod2,integer,32,True,The second period score of the away team.,True,True
+9044000,ScheduleBasic,AwayTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the away team (if applicable).,True,True
+9044000,ScheduleBasic,AwayTeamScorePenalty,integer,32,True,The penalty shootout score of the away team (if applicable).,True,True
+9044000,ScheduleBasic,HomeTeamKey,string,10,True,The abbreviation of the home team.,True,False
+9044000,ScheduleBasic,HomeTeamName,string,50,True,The name of the home team.,True,False
+9044000,ScheduleBasic,HomeTeamCountryCode,string,10,True,The country code of the home team.,True,False
+9044000,ScheduleBasic,HomeTeamScore,integer,32,True,The final score of the home team.,True,True
+9044000,ScheduleBasic,HomeTeamScorePeriod1,integer,32,True,The first period score of the home team.,True,True
+9044000,ScheduleBasic,HomeTeamScorePeriod2,integer,32,True,The second period score of the home team.,True,True
+9044000,ScheduleBasic,HomeTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the home team (if applicable).,True,True
+9044000,ScheduleBasic,HomeTeamScorePenalty,integer,32,True,The penalty shootout score of the home team (if applicable).,True,True
+9044000,ScheduleBasic,Updated,datetime,,True,The timestamp of when this record was updated; based on US Eatern Time (EST/EDT).,True,False
+9044000,ScheduleBasic,UpdatedUtc,datetime,,True,The timestamp of when this record was updated; based on Universal Coordinated Time (UTC).,True,False
+9044000,ScheduleBasic,GlobalGameId,integer,32,False,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9044000,ScheduleBasic,GlobalAwayTeamId,integer,32,True,A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9044000,ScheduleBasic,GlobalHomeTeamId,integer,32,True,A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9044000,ScheduleBasic,IsClosed,boolean,,True,Indicates whether the game is over and the final score and stats have been verified and closed out,True,False
+9044000,ScheduleBasic,PlayoffAggregateScore,PlayoffAggregateScore,,True,Aggregate scoring information for 2-leg/home-and-home games (i.e. Champions League Round of 16).  Team A is determined by the first leg’s home team.,True,False
+9051000,FantasyGame,GameID,integer,32,True,The unique ID of this game,True,False
+9051000,FantasyGame,PlayerID,integer,32,True,Unique ID assigned to each player that stays with them throughout their career,True,False
+9051000,FantasyGame,SeasonType,integer,32,True,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9051000,FantasyGame,Season,integer,32,True,The soccer season of the game,True,False
+9051000,FantasyGame,Day,date,,True,The day of the game,True,False
+9051000,FantasyGame,DateTime,datetime,,True,The date and time of the game (UTC),True,False
+9051000,FantasyGame,Team,string,50,True,The abbreviation of the Team,True,False
+9051000,FantasyGame,Opponent,string,10,True,The name of the opponent,True,False
+9051000,FantasyGame,Jersey,integer,32,True,The player's jersey number.,True,False
+9051000,FantasyGame,Name,string,100,True,The player's name,True,False
+9051000,FantasyGame,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9051000,FantasyGame,PositionCategory,string,10,True,The player's position category.,True,False
+9051000,FantasyGame,Started,integer,32,True,Number of games the player started,True,False
+9051000,FantasyGame,FantasyPoints,decimal,32,True,Total fantasy points,True,False
+9051000,FantasyGame,IsGameOver,boolean,,False,Whether the game is over (true/false),True,False
+9051000,FantasyGame,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,False
+9051000,FantasyGame,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,False
+9051000,FantasyGame,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,False
+9051000,FantasyGame,FanDuelPosition,string,10,True,The player's eligible position in FanDuel's daily fantasy sports platform.,True,False
+9051000,FantasyGame,DraftKingsPosition,string,10,True,The player's eligible position in DraftKings' daily fantasy sports platform.,True,False
+9051000,FantasyGame,YahooPosition,string,10,True,The player's eligible position in Yahoo's daily fantasy sports platform.,True,False
+9051000,FantasyGame,GlobalGameID,integer,32,True,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9051000,FantasyGame,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9009000,Player,PlayerId,integer,32,False,The player's unique PlayerID as assigned by SportsDataIO.,True,False
+9009000,Player,FirstName,string,50,True,The player's first name.,True,False
+9009000,Player,LastName,string,50,True,The player's last name.,True,False
+9009000,Player,CommonName,string,100,True,The player's common name.,True,False
+9009000,Player,ShortName,string,50,True,The player's short name.,True,False
+9009000,Player,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9009000,Player,PositionCategory,string,10,True,The player's position category. ,True,False
+9009000,Player,Jersey,integer,32,True,The player's jersey number.,True,False
+9009000,Player,Foot,string,10,True,The primary foot of the player. Possible values: left or right,True,False
+9009000,Player,Height,integer,32,True,The player's height in cm.,True,False
+9009000,Player,Weight,integer,32,True,The player's weight in kg.,True,False
+9009000,Player,Gender,string,10,True,The gender of the player.,True,False
+9009000,Player,BirthDate,datetime,,True,The player's date of birth.,True,False
+9009000,Player,BirthCity,string,50,True,The city in which the player was born.,True,False
+9009000,Player,BirthCountry,string,50,True,The country in which the player was born.,True,False
+9009000,Player,Nationality,string,50,True,The nationality of the player.,True,False
+9009000,Player,InjuryStatus,string,50,True,Indicates the player's injury status. Possible values include: Questionable; Out,True,True
+9009000,Player,InjuryBodyPart,string,100,True,The body part that is injured (Knee; Groin; Calf; Hamstring; etc.),True,True
+9009000,Player,InjuryNotes,string,250,True,Not yet supported; will be null.,True,True
+9009000,Player,InjuryStartDate,date,,True,The day that the injury started or first discovered.,True,False
+9009000,Player,Updated,datetime,,True,The date and time the player's status was updated. (EST/EDT),True,False
+9009000,Player,PhotoUrl,string,100,True,This field is deprecated. Photos are no longer available through it. Headshots are now delivered through IMAGN. Please see our Headshots products for further information.,True,False
+9009000,Player,RotoWirePlayerID,integer,32,True,The player's cross reference PlayerID to the RotoWire news feed.,True,False
+9009000,Player,DraftKingsPosition,string,50,True,The position of the player according to DraftKings.,True,False
+9009000,Player,UsaTodayPlayerID,integer,32,True,The player's cross reference PlayerID to USA Today headshot data feeds.,True,False
+9009000,Player,UsaTodayHeadshotUrl,string,100,True,The player's headshot URL as provided by USA Today. License from USA Today is required.,True,False
+9009000,Player,UsaTodayHeadshotNoBackgroundUrl,string,100,True,The player's transparent background headshot URL as provided by USA Today. License from USA Today is required.,True,False
+9009000,Player,UsaTodayHeadshotUpdated,datetime,,True,The last updated date of the player's headshot as provided by USA Today. License from USA Today is required.,True,False
+9009000,Player,UsaTodayHeadshotNoBackgroundUpdated,datetime,,True,The last updated date of the player's transparent background headshot as provided by USA Today. License from USA Today is required.,True,False
+9046000,PlayerBasic,PlayerId,integer,32,False,The player's unique PlayerID as assigned by SportsDataIO.,True,False
+9046000,PlayerBasic,FirstName,string,50,True,The player's first name.,True,False
+9046000,PlayerBasic,LastName,string,50,True,The player's last name.,True,False
+9046000,PlayerBasic,CommonName,string,100,True,The player's common name.,True,False
+9046000,PlayerBasic,ShortName,string,50,True,The player's short name.,True,False
+9046000,PlayerBasic,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9046000,PlayerBasic,PositionCategory,string,10,True,The player's position category.,True,False
+9046000,PlayerBasic,Jersey,integer,32,True,The player's jersey number.,True,False
+9046000,PlayerBasic,Foot,string,10,True,The primary foot of the player. Possible values: left or right,True,False
+9046000,PlayerBasic,Height,integer,32,True,The player's height in cm.,True,False
+9046000,PlayerBasic,Weight,integer,32,True,The player's weight in kg.,True,False
+9046000,PlayerBasic,Gender,string,10,True,The gender of the player.,True,False
+9046000,PlayerBasic,BirthDate,datetime,,True,The player's date of birth.,True,False
+9046000,PlayerBasic,BirthCity,string,50,True,The city in which the player was born.,True,False
+9046000,PlayerBasic,BirthCountry,string,50,True,The country in which the player was born.,True,False
+9046000,PlayerBasic,Nationality,string,50,True,The nationality of the player.,True,False
+9046000,PlayerBasic,Updated,datetime,,True,The date and time the player's status was updated. (EST/EDT),True,False
+9010000,Membership,MembershipId,integer,32,False,The unique ID for the membership,True,False
+9010000,Membership,TeamId,integer,32,False,The unique ID for the team,True,False
+9010000,Membership,PlayerId,integer,32,False,The player's unique PlayerID as assigned by SportsDataIO.,True,False
+9010000,Membership,PlayerName,string,100,True,The full name of the player.,True,False
+9010000,Membership,TeamName,string,50,True,Name of the team,True,False
+9010000,Membership,TeamArea,string,50,True,Area of the team,True,False
+9010000,Membership,Active,boolean,,False,Whether the membership is active (true/false),True,False
+9010000,Membership,StartDate,datetime,,True,The start date of the membership (UTC),True,False
+9010000,Membership,EndDate,datetime,,True,The end date of the membership (UTC),True,False
+9010000,Membership,Updated,datetime,,True,The updated date and time of the membership (EST/EDT),True,False
+9010000,Membership,Jersey,integer,,True,Jersey number worn by player for this team,True,True
+9013000,PlayerGame,StatId,integer,32,False,The unique ID of the stat,True,False
+9013000,PlayerGame,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9013000,PlayerGame,Season,integer,32,False,The soccer season of the game,True,False
+9013000,PlayerGame,RoundId,integer,32,True,The unique ID of the round,True,False
+9013000,PlayerGame,TeamId,integer,32,True,The unique ID of the team,True,False
+9013000,PlayerGame,PlayerId,integer,32,True,Unique ID assigned to each player that stays with them throughout their career,True,False
+9013000,PlayerGame,Name,string,100,True,Player's name,True,False
+9013000,PlayerGame,ShortName,string,50,True,The short name of the player,True,False
+9013000,PlayerGame,Team,string,50,True,The abbreviation of the Team,True,False
+9013000,PlayerGame,PositionCategory,string,10,True,The player's position category. ,True,False
+9013000,PlayerGame,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9013000,PlayerGame,Jersey,integer,32,True,The player's jersey number.,True,False
+9013000,PlayerGame,Started,integer,32,True,Number of games the player started,True,False
+9013000,PlayerGame,Captain,boolean,,True,Whether the player is a captain (true/false,True,False
+9013000,PlayerGame,Suspension,boolean,,True,Whether the player is suspended (true/false),True,False
+9013000,PlayerGame,SuspensionReason,string,20,True,The reason for the suspension,True,False
+9013000,PlayerGame,FanDuelSalary,integer,32,True,The player's salary for FanDuel daily fantasy contests.,True,True
+9013000,PlayerGame,DraftKingsSalary,integer,32,True,The player's salary for DraftKings daily fantasy contests.,True,True
+9013000,PlayerGame,YahooSalary,integer,32,True,The player's salary for Yahoo daily fantasy contests.,True,True
+9013000,PlayerGame,MondogoalSalary,integer,32,True,The player's salary for Mondogoal daily fantasy contests.,True,True
+9013000,PlayerGame,FanDuelPosition,string,10,True,The player's eligible position in FanDuel's daily fantasy sports platform.,True,True
+9013000,PlayerGame,DraftKingsPosition,string,10,True,The player's eligible position in DraftKings' daily fantasy sports platform.,True,True
+9013000,PlayerGame,YahooPosition,string,10,True,The player's eligible position in Yahoo's daily fantasy sports platform.,True,True
+9013000,PlayerGame,MondogoalPosition,string,10,True,The player's eligible position in Mondogoal's daily fantasy sports platform.,True,True
+9013000,PlayerGame,InjuryStatus,string,50,True,Indicates the player's injury status. Possible values include: Questionable; Out,True,True
+9013000,PlayerGame,InjuryBodyPart,string,100,True,The body part that is injured (Knee; Groin; Calf; Hamstring; etc.),True,True
+9013000,PlayerGame,InjuryNotes,string,250,True,Not yet supported; will be null.,True,True
+9013000,PlayerGame,InjuryStartDate,date,,True,The day that the injury started or first discovered.,True,False
+9013000,PlayerGame,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9013000,PlayerGame,GameId,integer,32,True,The unique ID of this game,True,False
+9013000,PlayerGame,OpponentId,integer,32,True,The unique ID of the team's opponent,True,False
+9013000,PlayerGame,Opponent,string,10,True,The name of the opponent ,True,False
+9013000,PlayerGame,Day,date,,True,The day of the game,True,False
+9013000,PlayerGame,DateTime,datetime,,True,The date and time of the game (UTC),True,False
+9013000,PlayerGame,HomeOrAway,string,4,True,Whether the team is home or away,True,False
+9013000,PlayerGame,IsGameOver,boolean,,False,Whether the game is over (true/false),True,False
+9013000,PlayerGame,GlobalGameId,integer,32,True,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9013000,PlayerGame,GlobalOpponentId,integer,32,True,A globally unique ID for this opponent. This value is guaranteed to be unique across all sports/leagues.,True,False
+9013000,PlayerGame,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9013000,PlayerGame,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9013000,PlayerGame,Games,integer,32,True,The number of games played,True,False
+9013000,PlayerGame,FantasyPoints,decimal,32,True,Total fantasy points,True,True
+9013000,PlayerGame,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,True
+9013000,PlayerGame,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,True
+9013000,PlayerGame,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,True
+9013000,PlayerGame,FantasyPointsMondogoal,decimal,32,True,Total Mondogoal fantasy points scored,True,True
+9013000,PlayerGame,Minutes,decimal,32,True,Total minutes played,True,True
+9013000,PlayerGame,Goals,decimal,32,True,Total goals scored,True,True
+9013000,PlayerGame,Assists,decimal,32,True,Total assists scored,True,True
+9013000,PlayerGame,Shots,decimal,32,True,Total shots attempted,True,True
+9013000,PlayerGame,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9013000,PlayerGame,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9013000,PlayerGame,RedCards,decimal,32,True,Total red cards against,True,True
+9013000,PlayerGame,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9013000,PlayerGame,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9013000,PlayerGame,TacklesWon,decimal,32,True,Total tackles won,True,True
+9013000,PlayerGame,Interceptions,decimal,32,True,Total interceptions made,True,True
+9013000,PlayerGame,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9013000,PlayerGame,Fouls,decimal,32,True,Total fouls made,True,True
+9013000,PlayerGame,Fouled,decimal,32,True,Total times fouled,True,True
+9013000,PlayerGame,Offsides,decimal,32,True,Total offsides against,True,True
+9013000,PlayerGame,Passes,decimal,32,True,Total passes attempted,True,True
+9013000,PlayerGame,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9013000,PlayerGame,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9013000,PlayerGame,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9013000,PlayerGame,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9013000,PlayerGame,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9013000,PlayerGame,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9013000,PlayerGame,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9013000,PlayerGame,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9013000,PlayerGame,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9013000,PlayerGame,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9013000,PlayerGame,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9013000,PlayerGame,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9013000,PlayerGame,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9013000,PlayerGame,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9013000,PlayerGame,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9013000,PlayerGame,PenaltiesConceded,decimal,32,True,Total penalties conceded ,True,True
+9013000,PlayerGame,Score,decimal,32,True,Goals scored by entire team,True,True
+9013000,PlayerGame,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9013000,PlayerGame,Tackles,decimal,32,True,Total Tackles,False,True
+9047000,PlayerGameBasic,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9047000,PlayerGameBasic,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9047000,PlayerGameBasic,Games,integer,32,True,The number of games played,True,False
+9047000,PlayerGameBasic,Minutes,decimal,32,True,Total minutes played,True,True
+9047000,PlayerGameBasic,Goals,decimal,32,True,Total goals scored,True,True
+9047000,PlayerGameBasic,Assists,decimal,32,True,Total assists scored,True,True
+9047000,PlayerGameBasic,Shots,decimal,32,True,Total shots attempted,True,True
+9047000,PlayerGameBasic,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9047000,PlayerGameBasic,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9047000,PlayerGameBasic,RedCards,decimal,32,True,Total red cards against,True,True
+9047000,PlayerGameBasic,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9047000,PlayerGameBasic,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9047000,PlayerGameBasic,TacklesWon,decimal,32,True,Total tackles won,True,True
+9047000,PlayerGameBasic,Interceptions,decimal,32,True,Total interceptions made,True,True
+9047000,PlayerGameBasic,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9047000,PlayerGameBasic,Fouls,decimal,32,True,Total fouls made,True,True
+9047000,PlayerGameBasic,Fouled,decimal,32,True,Total times fouled,True,True
+9047000,PlayerGameBasic,Offsides,decimal,32,True,Total offsides against,True,True
+9047000,PlayerGameBasic,Passes,decimal,32,True,Total passes attempted,True,True
+9047000,PlayerGameBasic,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9047000,PlayerGameBasic,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9047000,PlayerGameBasic,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9047000,PlayerGameBasic,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9047000,PlayerGameBasic,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9047000,PlayerGameBasic,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9047000,PlayerGameBasic,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9047000,PlayerGameBasic,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9047000,PlayerGameBasic,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9047000,PlayerGameBasic,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9047000,PlayerGameBasic,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9047000,PlayerGameBasic,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9047000,PlayerGameBasic,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9047000,PlayerGameBasic,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9047000,PlayerGameBasic,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9047000,PlayerGameBasic,PenaltiesConceded,decimal,32,True,Total penalties conceded,True,True
+9047000,PlayerGameBasic,Score,decimal,32,True,Goals scored by entire team,True,True
+9047000,PlayerGameBasic,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9047000,PlayerGameBasic,Tackles,decimal,32,True,Total Tackles,False,True
+9047000,PlayerGameBasic,GameId,integer,32,True,The unique ID of this game,True,False
+9047000,PlayerGameBasic,OpponentId,integer,32,True,The unique ID of the team's opponent,True,False
+9047000,PlayerGameBasic,Opponent,string,10,True,The name of the opponent,True,False
+9047000,PlayerGameBasic,Day,date,,True,The day of the game,True,False
+9047000,PlayerGameBasic,DateTime,datetime,,True,The date and time of the game (UTC),True,False
+9047000,PlayerGameBasic,HomeOrAway,string,4,True,Whether the team is home or away,True,False
+9047000,PlayerGameBasic,IsGameOver,boolean,,False,Whether the game is over (true/false),True,False
+9047000,PlayerGameBasic,GlobalGameId,integer,32,True,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9047000,PlayerGameBasic,GlobalOpponentId,integer,32,True,A globally unique ID for this opponent. This value is guaranteed to be unique across all sports/leagues.,True,False
+9047000,PlayerGameBasic,StatId,integer,32,False,The unique ID of the stat,True,False
+9047000,PlayerGameBasic,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9047000,PlayerGameBasic,Season,integer,32,False,The soccer season of the game,True,False
+9047000,PlayerGameBasic,RoundId,integer,32,True,The unique ID of the round,True,False
+9047000,PlayerGameBasic,TeamId,integer,32,True,The unique ID of the team,True,False
+9047000,PlayerGameBasic,PlayerId,integer,32,True,Unique ID assigned to each player that stays with them throughout their career,True,False
+9047000,PlayerGameBasic,Name,string,100,True,Player's name,True,False
+9047000,PlayerGameBasic,ShortName,string,50,True,The short name of the player,True,False
+9047000,PlayerGameBasic,Team,string,50,True,The abbreviation of the Team,True,False
+9047000,PlayerGameBasic,PositionCategory,string,10,True,The player's position category.,True,False
+9047000,PlayerGameBasic,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9047000,PlayerGameBasic,Jersey,integer,32,False,The player's jersey number.,True,False
+9047000,PlayerGameBasic,Started,integer,32,True,Number of games the player started,True,False
+9047000,PlayerGameBasic,Captain,boolean,,True,Whether the player is a captain (true/false),True,False
+9047000,PlayerGameBasic,Suspension,boolean,,True,Whether the player is suspended (true/false),True,False
+9047000,PlayerGameBasic,SuspensionReason,string,20,True,The reason for the suspension,False,False
+9047000,PlayerGameBasic,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9014000,TeamGame,StatId,integer,32,False,The unique ID of the stat,True,False
+9014000,TeamGame,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9014000,TeamGame,Season,integer,32,False,The soccer season of the game,True,False
+9014000,TeamGame,RoundId,integer,32,True,The unique ID of the round,True,False
+9014000,TeamGame,TeamId,integer,32,True,The unique ID of the team,True,False
+9014000,TeamGame,Name,string,100,True,Team's name,True,False
+9014000,TeamGame,Team,string,50,True,The abbreviation of the Team,True,False
+9014000,TeamGame,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9014000,TeamGame,Possession,decimal,32,True,Percentage of ball possession for this game,True,False
+9014000,TeamGame,GameId,integer,32,True,The unique ID of this game,True,False
+9014000,TeamGame,OpponentId,integer,32,True,The unique ID of the team's opponent,True,False
+9014000,TeamGame,Opponent,string,10,True,The name of the opponent ,True,False
+9014000,TeamGame,Day,date,,True,The day of the game,True,False
+9014000,TeamGame,DateTime,datetime,,True,The date and time of the game (UTC),True,False
+9014000,TeamGame,HomeOrAway,string,4,True,Whether the team is home or away,True,False
+9014000,TeamGame,IsGameOver,boolean,,False,Whether the game is over (true/false),True,False
+9014000,TeamGame,GlobalGameId,integer,32,True,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9014000,TeamGame,GlobalOpponentId,integer,32,True,A globally unique ID for this opponent. This value is guaranteed to be unique across all sports/leagues.,True,False
+9014000,TeamGame,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9014000,TeamGame,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9014000,TeamGame,Games,integer,32,True,The number of games played,True,False
+9014000,TeamGame,FantasyPoints,decimal,32,True,Total fantasy points,True,True
+9014000,TeamGame,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,True
+9014000,TeamGame,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,True
+9014000,TeamGame,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,True
+9014000,TeamGame,FantasyPointsMondogoal,decimal,32,True,Total Mondogoal fantasy points scored,True,True
+9014000,TeamGame,Minutes,decimal,32,True,Total minutes played,True,True
+9014000,TeamGame,Goals,decimal,32,True,Total goals scored,True,True
+9014000,TeamGame,Assists,decimal,32,True,Total assists scored,True,True
+9014000,TeamGame,Shots,decimal,32,True,Total shots attempted,True,True
+9014000,TeamGame,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9014000,TeamGame,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9014000,TeamGame,RedCards,decimal,32,True,Total red cards against,True,True
+9014000,TeamGame,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9014000,TeamGame,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9014000,TeamGame,TacklesWon,decimal,32,True,Total tackles won,True,True
+9014000,TeamGame,Interceptions,decimal,32,True,Total interceptions made,True,True
+9014000,TeamGame,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9014000,TeamGame,Fouls,decimal,32,True,Total fouls made,True,True
+9014000,TeamGame,Fouled,decimal,32,True,Total times fouled,True,True
+9014000,TeamGame,Offsides,decimal,32,True,Total offsides against,True,True
+9014000,TeamGame,Passes,decimal,32,True,Total passes attempted,True,True
+9014000,TeamGame,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9014000,TeamGame,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9014000,TeamGame,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9014000,TeamGame,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9014000,TeamGame,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9014000,TeamGame,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9014000,TeamGame,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9014000,TeamGame,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9014000,TeamGame,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9014000,TeamGame,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9014000,TeamGame,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9014000,TeamGame,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9014000,TeamGame,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9014000,TeamGame,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9014000,TeamGame,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9014000,TeamGame,PenaltiesConceded,decimal,32,True,Total penalties conceded ,True,True
+9014000,TeamGame,Score,decimal,32,True,Goals scored by entire team,True,True
+9014000,TeamGame,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9014000,TeamGame,Tackles,decimal,32,True,Total Tackles,False,True
+9015000,PlayerSeason,StatId,integer,32,False,The unique ID of the stat,True,False
+9015000,PlayerSeason,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9015000,PlayerSeason,Season,integer,32,False,The soccer regular season for which these totals apply,True,False
+9015000,PlayerSeason,RoundId,integer,32,True,The unique ID of the round,True,False
+9015000,PlayerSeason,TeamId,integer,32,True,The unique ID of the player's team,True,False
+9015000,PlayerSeason,PlayerId,integer,32,True,Unique ID assigned to each player that stays with them throughout their career,True,False
+9015000,PlayerSeason,Name,string,100,True,Player's name,True,False
+9015000,PlayerSeason,ShortName,string,50,True,The short name of the player,True,False
+9015000,PlayerSeason,Team,string,50,True,The abbreviation of the Team,True,False
+9015000,PlayerSeason,PositionCategory,string,10,True,The player's position category. ,True,False
+9015000,PlayerSeason,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9015000,PlayerSeason,Started,integer,32,True,Number of games started,True,False
+9015000,PlayerSeason,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9015000,PlayerSeason,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9015000,PlayerSeason,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9015000,PlayerSeason,Games,integer,32,True,The number of games played,True,False
+9015000,PlayerSeason,FantasyPoints,decimal,32,True,Total fantasy points,True,True
+9015000,PlayerSeason,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,True
+9015000,PlayerSeason,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,True
+9015000,PlayerSeason,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,True
+9015000,PlayerSeason,FantasyPointsMondogoal,decimal,32,True,Total Mondogoal fantasy points scored,True,True
+9015000,PlayerSeason,Minutes,decimal,32,True,Total minutes played,True,True
+9015000,PlayerSeason,Goals,decimal,32,True,Total goals scored,True,True
+9015000,PlayerSeason,Assists,decimal,32,True,Total assists scored,True,True
+9015000,PlayerSeason,Shots,decimal,32,True,Total shots attempted,True,True
+9015000,PlayerSeason,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9015000,PlayerSeason,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9015000,PlayerSeason,RedCards,decimal,32,True,Total red cards against,True,True
+9015000,PlayerSeason,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9015000,PlayerSeason,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9015000,PlayerSeason,TacklesWon,decimal,32,True,Total tackles won,True,True
+9015000,PlayerSeason,Interceptions,decimal,32,True,Total interceptions made,True,True
+9015000,PlayerSeason,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9015000,PlayerSeason,Fouls,decimal,32,True,Total fouls made,True,True
+9015000,PlayerSeason,Fouled,decimal,32,True,Total times fouled,True,True
+9015000,PlayerSeason,Offsides,decimal,32,True,Total offsides against,True,True
+9015000,PlayerSeason,Passes,decimal,32,True,Total passes attempted,True,True
+9015000,PlayerSeason,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9015000,PlayerSeason,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9015000,PlayerSeason,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9015000,PlayerSeason,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9015000,PlayerSeason,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9015000,PlayerSeason,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9015000,PlayerSeason,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9015000,PlayerSeason,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9015000,PlayerSeason,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9015000,PlayerSeason,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9015000,PlayerSeason,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9015000,PlayerSeason,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9015000,PlayerSeason,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9015000,PlayerSeason,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9015000,PlayerSeason,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9015000,PlayerSeason,PenaltiesConceded,decimal,32,True,Total penalties conceded ,True,True
+9015000,PlayerSeason,Score,decimal,32,True,Goals scored by entire team,True,True
+9015000,PlayerSeason,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9015000,PlayerSeason,Tackles,decimal,32,True,Total Tackles,False,True
+9016000,TeamSeason,StatId,integer,32,False,The unique ID of the stat,True,False
+9016000,TeamSeason,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9016000,TeamSeason,Season,integer,32,False,The soccer regular season for which these totals apply,True,False
+9016000,TeamSeason,RoundId,integer,32,True,The unique ID of the round,True,False
+9016000,TeamSeason,TeamId,integer,32,True,The unique ID of the team,True,False
+9016000,TeamSeason,Name,string,100,True,Team name,True,False
+9016000,TeamSeason,Team,string,50,True,The abbreviation of the Team,True,False
+9016000,TeamSeason,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9016000,TeamSeason,Possession,decimal,32,True,Percentage of ball possession; per game; for this season.,True,False
+9016000,TeamSeason,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9016000,TeamSeason,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9016000,TeamSeason,Games,integer,32,True,The number of games played,True,False
+9016000,TeamSeason,FantasyPoints,decimal,32,True,Total fantasy points,True,True
+9016000,TeamSeason,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,True
+9016000,TeamSeason,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,True
+9016000,TeamSeason,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,True
+9016000,TeamSeason,FantasyPointsMondogoal,decimal,32,True,Total Mondogoal fantasy points scored,True,True
+9016000,TeamSeason,Minutes,decimal,32,True,Total minutes played,True,True
+9016000,TeamSeason,Goals,decimal,32,True,Total goals scored,True,True
+9016000,TeamSeason,Assists,decimal,32,True,Total assists scored,True,True
+9016000,TeamSeason,Shots,decimal,32,True,Total shots attempted,True,True
+9016000,TeamSeason,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9016000,TeamSeason,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9016000,TeamSeason,RedCards,decimal,32,True,Total red cards against,True,True
+9016000,TeamSeason,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9016000,TeamSeason,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9016000,TeamSeason,TacklesWon,decimal,32,True,Total tackles won,True,True
+9016000,TeamSeason,Interceptions,decimal,32,True,Total interceptions made,True,True
+9016000,TeamSeason,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9016000,TeamSeason,Fouls,decimal,32,True,Total fouls made,True,True
+9016000,TeamSeason,Fouled,decimal,32,True,Total times fouled,True,True
+9016000,TeamSeason,Offsides,decimal,32,True,Total offsides against,True,True
+9016000,TeamSeason,Passes,decimal,32,True,Total passes attempted,True,True
+9016000,TeamSeason,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9016000,TeamSeason,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9016000,TeamSeason,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9016000,TeamSeason,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9016000,TeamSeason,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9016000,TeamSeason,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9016000,TeamSeason,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9016000,TeamSeason,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9016000,TeamSeason,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9016000,TeamSeason,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9016000,TeamSeason,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9016000,TeamSeason,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9016000,TeamSeason,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9016000,TeamSeason,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9016000,TeamSeason,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9016000,TeamSeason,PenaltiesConceded,decimal,32,True,Total penalties conceded ,True,True
+9016000,TeamSeason,Score,decimal,32,True,Goals scored by entire team,True,True
+9016000,TeamSeason,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9016000,TeamSeason,Tackles,decimal,32,True,Total Tackles,False,True
+9017000,PlayerGameProjection,StatId,integer,32,False,The unique ID of the stat,True,False
+9017000,PlayerGameProjection,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9017000,PlayerGameProjection,Season,integer,32,False,The soccer season of the game,True,False
+9017000,PlayerGameProjection,RoundId,integer,32,True,The unique ID of the round,True,False
+9017000,PlayerGameProjection,TeamId,integer,32,True,The unique ID of the team,True,False
+9017000,PlayerGameProjection,PlayerId,integer,32,True,Unique ID assigned to each player that stays with them throughout their career,True,False
+9017000,PlayerGameProjection,Name,string,100,True,Player's name,True,False
+9017000,PlayerGameProjection,ShortName,string,50,True,The short name of the player,True,False
+9017000,PlayerGameProjection,Team,string,50,True,The abbreviation of the Team,True,False
+9017000,PlayerGameProjection,PositionCategory,string,10,True,The player's position category. ,True,False
+9017000,PlayerGameProjection,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9017000,PlayerGameProjection,Jersey,integer,32,True,The player's jersey number.,True,False
+9017000,PlayerGameProjection,Started,integer,32,True,Number of games the player started,True,False
+9017000,PlayerGameProjection,Captain,boolean,,True,Whether the player is a captain (true/false,True,False
+9017000,PlayerGameProjection,Suspension,boolean,,True,Whether the player is suspended (true/false),True,False
+9017000,PlayerGameProjection,SuspensionReason,string,20,True,The reason for the suspension,True,False
+9017000,PlayerGameProjection,FanDuelSalary,integer,32,True,The player's salary for FanDuel daily fantasy contests.,True,True
+9017000,PlayerGameProjection,DraftKingsSalary,integer,32,True,The player's salary for DraftKings daily fantasy contests.,True,True
+9017000,PlayerGameProjection,YahooSalary,integer,32,True,The player's salary for Yahoo daily fantasy contests.,True,True
+9017000,PlayerGameProjection,MondogoalSalary,integer,32,True,The player's salary for Mondogoal daily fantasy contests.,True,True
+9017000,PlayerGameProjection,FanDuelPosition,string,10,True,The player's eligible position in FanDuel's daily fantasy sports platform.,True,True
+9017000,PlayerGameProjection,DraftKingsPosition,string,10,True,The player's eligible position in DraftKings' daily fantasy sports platform.,True,True
+9017000,PlayerGameProjection,YahooPosition,string,10,True,The player's eligible position in Yahoo's daily fantasy sports platform.,True,True
+9017000,PlayerGameProjection,MondogoalPosition,string,10,True,The player's eligible position in Mondogoal's daily fantasy sports platform.,True,True
+9017000,PlayerGameProjection,InjuryStatus,string,50,True,Indicates the player's injury status. Possible values include: Questionable; Out,True,True
+9017000,PlayerGameProjection,InjuryBodyPart,string,100,True,The body part that is injured (Knee; Groin; Calf; Hamstring; etc.),True,True
+9017000,PlayerGameProjection,InjuryNotes,string,250,True,Not yet supported; will be null.,True,True
+9017000,PlayerGameProjection,InjuryStartDate,date,,True,The day that the injury started or first discovered.,True,False
+9017000,PlayerGameProjection,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9017000,PlayerGameProjection,GameId,integer,32,True,The unique ID of this game,True,False
+9017000,PlayerGameProjection,OpponentId,integer,32,True,The unique ID of the team's opponent,True,False
+9017000,PlayerGameProjection,Opponent,string,10,True,The name of the opponent ,True,False
+9017000,PlayerGameProjection,Day,date,,True,The day of the game,True,False
+9017000,PlayerGameProjection,DateTime,datetime,,True,The date and time of the game (UTC),True,False
+9017000,PlayerGameProjection,HomeOrAway,string,4,True,Whether the team is home or away,True,False
+9017000,PlayerGameProjection,IsGameOver,boolean,,False,Whether the game is over (true/false),True,False
+9017000,PlayerGameProjection,GlobalGameId,integer,32,True,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9017000,PlayerGameProjection,GlobalOpponentId,integer,32,True,A globally unique ID for this opponent. This value is guaranteed to be unique across all sports/leagues.,True,False
+9017000,PlayerGameProjection,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9017000,PlayerGameProjection,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9017000,PlayerGameProjection,Games,integer,32,True,The number of games played,True,False
+9017000,PlayerGameProjection,FantasyPoints,decimal,32,True,Total fantasy points,True,True
+9017000,PlayerGameProjection,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,True
+9017000,PlayerGameProjection,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,True
+9017000,PlayerGameProjection,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,True
+9017000,PlayerGameProjection,FantasyPointsMondogoal,decimal,32,True,Total Mondogoal fantasy points scored,True,True
+9017000,PlayerGameProjection,Minutes,decimal,32,True,Total minutes played,True,True
+9017000,PlayerGameProjection,Goals,decimal,32,True,Total goals scored,True,True
+9017000,PlayerGameProjection,Assists,decimal,32,True,Total assists scored,True,True
+9017000,PlayerGameProjection,Shots,decimal,32,True,Total shots attempted,True,True
+9017000,PlayerGameProjection,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9017000,PlayerGameProjection,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9017000,PlayerGameProjection,RedCards,decimal,32,True,Total red cards against,True,True
+9017000,PlayerGameProjection,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9017000,PlayerGameProjection,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9017000,PlayerGameProjection,TacklesWon,decimal,32,True,Total tackles won,True,True
+9017000,PlayerGameProjection,Interceptions,decimal,32,True,Total interceptions made,True,True
+9017000,PlayerGameProjection,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9017000,PlayerGameProjection,Fouls,decimal,32,True,Total fouls made,True,True
+9017000,PlayerGameProjection,Fouled,decimal,32,True,Total times fouled,True,True
+9017000,PlayerGameProjection,Offsides,decimal,32,True,Total offsides against,True,True
+9017000,PlayerGameProjection,Passes,decimal,32,True,Total passes attempted,True,True
+9017000,PlayerGameProjection,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9017000,PlayerGameProjection,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9017000,PlayerGameProjection,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9017000,PlayerGameProjection,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9017000,PlayerGameProjection,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9017000,PlayerGameProjection,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9017000,PlayerGameProjection,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9017000,PlayerGameProjection,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9017000,PlayerGameProjection,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9017000,PlayerGameProjection,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9017000,PlayerGameProjection,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9017000,PlayerGameProjection,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9017000,PlayerGameProjection,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9017000,PlayerGameProjection,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9017000,PlayerGameProjection,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9017000,PlayerGameProjection,PenaltiesConceded,decimal,32,True,Total penalties conceded ,True,True
+9017000,PlayerGameProjection,Score,decimal,32,True,Goals scored by entire team,True,True
+9017000,PlayerGameProjection,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9017000,PlayerGameProjection,Tackles,decimal,32,True,Total Tackles,False,True
+9018000,PlayerSeasonProjection,StatId,integer,32,False,The unique ID of the stat,True,False
+9018000,PlayerSeasonProjection,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9018000,PlayerSeasonProjection,Season,integer,32,False,The soccer regular season for which these totals apply,True,False
+9018000,PlayerSeasonProjection,RoundId,integer,32,True,The unique ID of the round,True,False
+9018000,PlayerSeasonProjection,TeamId,integer,32,True,The unique ID of the player's team,True,False
+9018000,PlayerSeasonProjection,PlayerId,integer,32,True,Unique ID assigned to each player that stays with them throughout their career,True,False
+9018000,PlayerSeasonProjection,Name,string,100,True,Player's name,True,False
+9018000,PlayerSeasonProjection,ShortName,string,50,True,The short name of the player,True,False
+9018000,PlayerSeasonProjection,Team,string,50,True,The abbreviation of the Team,True,False
+9018000,PlayerSeasonProjection,PositionCategory,string,10,True,The player's position category. ,True,False
+9018000,PlayerSeasonProjection,Position,string,10,True,The position of the player. Possible values include: A (Attacker); M (Midfielder); D (Defender); GK (Goalkeeper),True,False
+9018000,PlayerSeasonProjection,Started,integer,32,True,Number of games started,True,False
+9018000,PlayerSeasonProjection,GlobalTeamId,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9018000,PlayerSeasonProjection,Updated,datetime,,True,The timestamp of when the record was last updated (US Eastern Time),True,False
+9018000,PlayerSeasonProjection,UpdatedUtc,datetime,,True,The timestamp of when the record was last updated (UTC Time),True,False
+9018000,PlayerSeasonProjection,Games,integer,32,True,The number of games played,True,False
+9018000,PlayerSeasonProjection,FantasyPoints,decimal,32,True,Total fantasy points,True,True
+9018000,PlayerSeasonProjection,FantasyPointsFanDuel,decimal,32,True,Total Fan Duel daily fantasy points scored,True,True
+9018000,PlayerSeasonProjection,FantasyPointsDraftKings,decimal,32,True,Total Draft Kings daily fantasy points scored,True,True
+9018000,PlayerSeasonProjection,FantasyPointsYahoo,decimal,32,True,Total Yahoo daily fantasy points scored,True,True
+9018000,PlayerSeasonProjection,FantasyPointsMondogoal,decimal,32,True,Total Mondogoal fantasy points scored,True,True
+9018000,PlayerSeasonProjection,Minutes,decimal,32,True,Total minutes played,True,True
+9018000,PlayerSeasonProjection,Goals,decimal,32,True,Total goals scored,True,True
+9018000,PlayerSeasonProjection,Assists,decimal,32,True,Total assists scored,True,True
+9018000,PlayerSeasonProjection,Shots,decimal,32,True,Total shots attempted,True,True
+9018000,PlayerSeasonProjection,ShotsOnGoal,decimal,32,True,Total shots on goal attempted,True,True
+9018000,PlayerSeasonProjection,YellowCards,decimal,32,True,Total yellow cards against,True,True
+9018000,PlayerSeasonProjection,RedCards,decimal,32,True,Total red cards against,True,True
+9018000,PlayerSeasonProjection,YellowRedCards,decimal,32,True,Total double yellow cards against (which result in a red card),True,True
+9018000,PlayerSeasonProjection,Crosses,decimal,32,True,Total passes from a wide area of the field towards the center of the field near the opponent's goal,True,True
+9018000,PlayerSeasonProjection,TacklesWon,decimal,32,True,Total tackles won,True,True
+9018000,PlayerSeasonProjection,Interceptions,decimal,32,True,Total interceptions made,True,True
+9018000,PlayerSeasonProjection,OwnGoals,decimal,32,True,Total goals scored against own team (accidentally),True,True
+9018000,PlayerSeasonProjection,Fouls,decimal,32,True,Total fouls made,True,True
+9018000,PlayerSeasonProjection,Fouled,decimal,32,True,Total times fouled,True,True
+9018000,PlayerSeasonProjection,Offsides,decimal,32,True,Total offsides against,True,True
+9018000,PlayerSeasonProjection,Passes,decimal,32,True,Total passes attempted,True,True
+9018000,PlayerSeasonProjection,PassesCompleted,decimal,32,True,Total passes completed successfully to teammate,True,True
+9018000,PlayerSeasonProjection,LastManTackle,decimal,32,True,Total tackles made when there is no one else available to stop the opponent from scoring (this can be the goalkeeper),True,True
+9018000,PlayerSeasonProjection,CornersWon,decimal,32,True,Total corner kicks awarded,True,True
+9018000,PlayerSeasonProjection,BlockedShots,decimal,32,True,Total shots blocked,True,True
+9018000,PlayerSeasonProjection,Touches,decimal,32,True,Total times this player touched the ball,True,True
+9018000,PlayerSeasonProjection,DefenderCleanSheets,decimal,32,True,Total defender clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9018000,PlayerSeasonProjection,GoalkeeperSaves,decimal,32,True,Total saves made by goalkeeper,True,True
+9018000,PlayerSeasonProjection,GoalkeeperGoalsAgainst,decimal,32,True,Total goals allowed by goalkeeper,True,True
+9018000,PlayerSeasonProjection,GoalkeeperSingleGoalAgainst,decimal,32,True,Total games where this goalkeeper allowed exactly one goal,True,True
+9018000,PlayerSeasonProjection,GoalkeeperCleanSheets,decimal,32,True,Total goalkeeper clean sheets (awarded when zero goals were allowed to the opponent and the player played at least 60 minutes),True,True
+9018000,PlayerSeasonProjection,GoalkeeperWins,decimal,32,True,Total goalkeeper wins (awarded when zero goals were allowed to the opponent and the player played at least 45 minutes),True,True
+9018000,PlayerSeasonProjection,PenaltyKickGoals,decimal,32,True,Total penalty kick goals,True,True
+9018000,PlayerSeasonProjection,PenaltyKickMisses,decimal,32,True,Total penalty kick misses,True,True
+9018000,PlayerSeasonProjection,PenaltyKickSaves,decimal,32,True,Total penalty kick saves,True,True
+9018000,PlayerSeasonProjection,PenaltiesWon,decimal,32,True,Total penalties won,True,True
+9018000,PlayerSeasonProjection,PenaltiesConceded,decimal,32,True,Total penalties conceded ,True,True
+9018000,PlayerSeasonProjection,Score,decimal,32,True,Goals scored by entire team,True,True
+9018000,PlayerSeasonProjection,OpponentScore,decimal,32,True,Goals allowed to opponent,True,True
+9018000,PlayerSeasonProjection,Tackles,decimal,32,True,Total Tackles,False,True
+9019000,Standing,StandingId,integer,32,False,The unique ID of the standing,True,False
+9019000,Standing,RoundId,integer,32,False,The unique ID of the round,True,False
+9019000,Standing,TeamId,integer,32,False,The unique ID of the team,True,False
+9019000,Standing,Name,string,100,True,The full name of the team,True,False
+9019000,Standing,ShortName,string,50,True,The short name of the team,True,False
+9019000,Standing,Scope,string,20,True,The scope of the standing (possible values: Total; Away; Home),True,False
+9019000,Standing,[Order],integer,32,True,The order of the teams in the standing (e.g 1; 2; 3; 4; etc.),True,False
+9019000,Standing,Games,integer,32,True,Number of games played,True,False
+9019000,Standing,Wins,integer,32,True,Number of wins,True,False
+9019000,Standing,Losses,integer,32,True,Number of losses,True,False
+9019000,Standing,Draws,integer,32,True,Number of draws,True,False
+9019000,Standing,GoalsScored,integer,32,True,Number of goals scored,True,False
+9019000,Standing,GoalsAgainst,integer,32,True,Number of goals against,True,False
+9019000,Standing,GoalsDifferential,integer,32,True,Total goal differential,True,False
+9019000,Standing,Points,integer,32,True,Total points accumulated,True,False
+9019000,Standing,Group,string,50,True,The name of the group (when applicable),True,False
+9019000,Standing,GlobalTeamID,integer,32,True,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9020000,Referee,RefereeId,integer,32,False,The unique ID of the referee,True,False
+9020000,Referee,FirstName,string,50,True,Referee's first name,True,False
+9020000,Referee,LastName,string,50,True,Referee's last name,True,False
+9020000,Referee,ShortName,string,50,True,Referee's short name,True,False
+9020000,Referee,Nationality,string,50,True,Referee's nationality,True,False
+9021000,Coach,CoachId,integer,32,False,The unique ID of the coach,True,False
+9021000,Coach,FirstName,string,50,True,Coach's first name,True,False
+9021000,Coach,LastName,string,50,True,Coach's last name,True,False
+9021000,Coach,ShortName,string,50,True,Coach's short name,True,False
+9021000,Coach,Nationality,string,50,True,Coach's nationality,True,False
+9022000,Lineup,LineupId,integer,32,False,The unique ID of the lineup ,True,False
+9022000,Lineup,GameId,integer,32,False,The unique ID of the game,True,False
+9022000,Lineup,Type,string,20,False,The player's status in the lineup. Possible values: Substitute In; Starter; Bench,True,False
+9022000,Lineup,TeamId,integer,32,False,The unique ID of the team,True,False
+9022000,Lineup,PlayerId,integer,32,False,The player's unique PlayerID as assigned by SportsDataIO,True,False
+9022000,Lineup,Name,string,100,False,The name of the player in the lineup,True,False
+9022000,Lineup,Position,string,10,True,The position of the player,True,False
+9022000,Lineup,ReplacedPlayerId,integer,32,True,The unique ID of the replaced player,True,False
+9022000,Lineup,ReplacedPlayerName,string,100,True,The name of the replaced player,True,False
+9022000,Lineup,GameMinute,integer,32,True,The minute of the game,True,False
+9022000,Lineup,GameMinuteExtra,integer,32,True,The extra minute of the game,True,False
+9022000,Lineup,PitchPositionHorizontal,integer,32,True,The pitch position of where this player lined up on the field. This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.,True,False
+9022000,Lineup,PitchPositionVertical,integer,32,True,The pitch position of where this player lined up on the field. This is used for rendering an image of a soccer/football field with the players marked as such. This will be a number between 0 and 50.,True,False
+9023000,Goal,GoalId,integer,32,False,The unique ID of the goal,True,False
+9023000,Goal,GameId,integer,32,False,The unique ID of the game,True,False
+9023000,Goal,TeamId,integer,32,False,The unique ID of the team that scored the goal,True,False
+9023000,Goal,PlayerId,integer,32,True,The player's unique PlayerID as assigned by SportsDataIO,True,False
+9023000,Goal,Name,string,100,True,The name of the player,True,False
+9023000,Goal,Type,string,20,True,The type of goal scored,True,False
+9023000,Goal,AssistedByPlayerId1,integer,32,True,The unique ID of the first assisted player,True,False
+9023000,Goal,AssistedByPlayerName1,string,100,True,The player's name of the first assisted player,True,True
+9023000,Goal,AssistedByPlayerId2,integer,32,True,The unique ID of the second assisted player,True,False
+9023000,Goal,AssistedByPlayerName2,string,100,True,The player's name of the second assisted player,True,True
+9023000,Goal,GameMinute,integer,32,True,The minute in the game in which the goal was scored,True,True
+9023000,Goal,GameMinuteExtra,integer,32,True,The extra minute in the game in which the goal was scored,True,True
+9024000,Booking,BookingId,integer,32,False,The unique ID of the booking,True,False
+9024000,Booking,GameId,integer,32,False,The unique ID of the game,True,False
+9024000,Booking,Type,string,20,False,The type of booking. Possible values: Yellow Card; Red Card; Yellow Red Card,True,False
+9024000,Booking,TeamId,integer,32,False,The unique ID of the team,True,False
+9024000,Booking,PlayerId,integer,32,True,The player's unique PlayerID as assigned by SportsDataIO,True,False
+9024000,Booking,Name,string,100,True,The name of the player who was booked ,True,False
+9024000,Booking,GameMinute,integer,32,True,The minute in the game in which the booking occurred,True,False
+9024000,Booking,GameMinuteExtra,integer,32,True,The extra minute in the game in which the booking occurred,True,False
+9025000,PenaltyShootout,PenaltyShootoutId,integer,32,False,The unique ID of the penalty shootout,True,False
+9025000,PenaltyShootout,GameId,integer,32,False,The unique ID of the game,True,False
+9025000,PenaltyShootout,Type,string,10,False,The result of this penalty shootout kick. Possible values: Goal; Miss,True,False
+9025000,PenaltyShootout,TeamId,integer,32,False,The unique ID of the team,True,False
+9025000,PenaltyShootout,PlayerId,integer,32,True,The player's unique PlayerID as assigned by SportsDataIO,True,False
+9025000,PenaltyShootout,Name,string,100,True,The name of the player in the penalty shootout,True,False
+9025000,PenaltyShootout,Position,string,10,True,The position of the player in the penalty shootout,True,False
+9025000,PenaltyShootout,Order,integer,32,False,The order of the penalty shootout,True,False
+9026000,CompetitionDetail,CurrentSeason,Season,,True,The current active season for this competition/league,True,False
+9026000,CompetitionDetail,Teams,TeamDetail[],,True,The active teams associated with this competition/league,True,False
+9026000,CompetitionDetail,Games,Game[],,True,The complete schedule for the current season of this competition/league,True,False
+9026000,CompetitionDetail,CompetitionId,integer,32,False,The unique ID of the competition/league,True,False
+9026000,CompetitionDetail,AreaId,integer,32,False,The unique ID of the area where this competition/league is played,True,False
+9026000,CompetitionDetail,AreaName,string,50,True,The display name of the area where this competition/league is played,True,False
+9026000,CompetitionDetail,Name,string,50,False,The display name of the competition/league,True,False
+9026000,CompetitionDetail,Gender,string,10,True,Indicates the gender of the players on this team (possible values: Male; Female),True,False
+9026000,CompetitionDetail,Type,string,10,True,The type of this competition/league (possible values: Club; International),True,False
+9026000,CompetitionDetail,Format,string,50,True,The format of the competition/league (possible values: Domestic League; International Cup),True,False
+9026000,CompetitionDetail,Seasons,Season[],,True,The seasons associated with this competition/league,True,False
+9026000,CompetitionDetail,Key,string,5,True,The unique string key of the competition/league,True,False
+9027000,TeamDetail,Players,Player[],,True,The players who are current on this team's active roster/squad,True,False
+9027000,TeamDetail,TeamId,integer,32,False,The auto-generated unique ID of the Team,True,False
+9027000,TeamDetail,AreaId,integer,32,True,The unique ID of the team's current home arena,True,False
+9027000,TeamDetail,VenueId,integer,32,True,The unique ID of the team's current home venue,True,False
+9027000,TeamDetail,[Key],string,10,True,Abbreviation of the team (e.g. LIV; ARS; etc.),True,False
+9027000,TeamDetail,Name,string,50,False,The mascot of the team (e.g. The Reds; The Gunners; etc.),True,False
+9027000,TeamDetail,FullName,string,100,True,The full name of the team (e.g. Liverpool Football Club; Arsenal Football Club; etc.),True,False
+9027000,TeamDetail,Active,boolean,,False,Whether or not this team is active,True,False
+9027000,TeamDetail,AreaName,string,50,True,The area name of the home team,True,False
+9027000,TeamDetail,VenueName,string,50,True,The venue name of the home team,True,False
+9027000,TeamDetail,Gender,string,10,True,Indicates the gender of the players on this team (possible values: Make; Female),True,False
+9027000,TeamDetail,Type,string,10,True,The type of this team. Possible values: Club; National,True,False
+9027000,TeamDetail,Address,string,100,True,The address of the home team,True,False
+9027000,TeamDetail,City,string,50,True,The city of the home team,True,False
+9027000,TeamDetail,Zip,string,50,True,The zip code of the home team,True,False
+9027000,TeamDetail,Phone,string,50,True,The phone number of the home team,True,False
+9027000,TeamDetail,Fax,string,50,True,The fax number of the home team,True,False
+9027000,TeamDetail,Website,string,50,True,The website address of the home team,True,False
+9027000,TeamDetail,Email,string,50,True,The email of the home team,True,False
+9027000,TeamDetail,Founded,integer,32,True,The year the team was founded (e.g. 1950; 1960; etc.),True,False
+9027000,TeamDetail,ClubColor1,string,50,True,The primary color of this team's logo/uniform/branding,True,False
+9027000,TeamDetail,ClubColor2,string,50,True,The secondary color of this team's logo/uniform/branding,True,False
+9027000,TeamDetail,ClubColor3,string,50,True,The tertiary color of this team's logo/uniform/branding,True,False
+9027000,TeamDetail,Nickname1,string,50,True,A nickname for this team,True,False
+9027000,TeamDetail,Nickname2,string,50,True,A nickname for this team,True,False
+9027000,TeamDetail,Nickname3,string,50,True,A nickname for this team,True,False
+9027000,TeamDetail,WikipediaLogoUrl,string,250,True,The link to the team's logo hosted on Wikipedia. (This is not licensed for public or commercial use),True,False
+9027000,TeamDetail,WikipediaWordMarkUrl,string,250,True,The link to the team's wordmark logo hosted on Wikipedia. (This is not licensed for public or commercial use),True,False
+9027000,TeamDetail,GlobalTeamId,integer,32,False,A globally unique ID for this team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9028000,BoxScore,Game,Game,,True,The game details associated with this box score,True,False
+9028000,BoxScore,AwayTeamCoach,Coach,,True,The coach of the away team,True,False
+9028000,BoxScore,HomeTeamCoach,Coach,,True,The coach of the home team,True,False
+9028000,BoxScore,MainReferee,Referee,,True,The main referee,True,False
+9028000,BoxScore,AssistantReferee1,Referee,,True,The first assistant referee,True,False
+9028000,BoxScore,AssistantReferee2,Referee,,True,The second assistant referee,True,False
+9028000,BoxScore,FourthReferee,Referee,,True,The fourth referee,True,False
+9028000,BoxScore,AdditionalAssistantReferee1,Referee,,True,The first additional assistant referee,True,False
+9028000,BoxScore,AdditionalAssistantReferee2,Referee,,True,The second additional assistant referee,True,False
+9028000,BoxScore,Lineups,Lineup[],,True,The details of the lineups for each team,True,False
+9028000,BoxScore,Goals,Goal[],,True,The details of the goals scored during this game,True,False
+9028000,BoxScore,Bookings,Booking[],,True,The details of the bookings (yellow/red cards) recorded during this game,True,False
+9028000,BoxScore,PenaltyShootouts,PenaltyShootout[],,True,The details of the penalty shootouts recorded during this game,True,False
+9028000,BoxScore,TeamGames,TeamGame[],,True,The team stats for this game,True,False
+9028000,BoxScore,PlayerGames,PlayerGame[],,True,The player stats for this game,True,False
+9028000,BoxScore,VideoAssistantReferee,Referee,,True,The referee in charge of the video reviews (VAR),True,False
+9029000,GameInfo,GameId,integer,32,False,The unique ID of the game.,True,False
+9029000,GameInfo,RoundId,integer,32,False,The RoundId of the round that this game is associated with.,True,False
+9029000,GameInfo,Season,integer,32,False,The calendar year of the season during which this game occurs.,True,False
+9029000,GameInfo,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9029000,GameInfo,Week,integer,32,True,The week during the season/round in which this game occurs.,True,False
+9029000,GameInfo,Day,date,,True,The day that the game is scheduled to be played in UTC.,True,False
+9029000,GameInfo,DateTime,datetime,,True,The date/time that the game is scheduled to be played in UTC.,True,False
+9029000,GameInfo,Status,string,10,True,Indicates the game's status. Possible values include: Scheduled; InProgress; Break; Final; Awarded; Postponed; Canceled; Suspended. If a game is called off before it starts; the Status is set to Postponed; until a new date/time is scheduled; at which point; the DateTime is updated; and the Status is set back to Scheduled. If a game has already started; and temporarily interrupted; it's Status is set to Suspended; until it either resumes; or gets postponed and replayed at a later date. If the game is at halftime; then the Status will be Break. Awarded is used in cases where a game is decided on the so called "green table." That means that a game was decided by the Federation/League to one team for a reason. This can include situations like riots; where the opponent team gets 3:0 win awarded as punishment. Awarded is also used when a club withdraws during the season from the competition then all the remaining matches getting awarded 3:0.,True,False
+9029000,GameInfo,AwayTeamId,integer,32,True,The TeamId of the away team.,True,False
+9029000,GameInfo,HomeTeamId,integer,32,True,The TeamId of the home team.,True,False
+9029000,GameInfo,AwayTeamName,string,50,True,The name of the away team.,True,False
+9029000,GameInfo,HomeTeamName,string,50,True,The name of the home team.,True,False
+9029000,GameInfo,GlobalGameId,integer,32,False,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9029000,GameInfo,GlobalAwayTeamId,integer,32,True,A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9029000,GameInfo,GlobalHomeTeamId,integer,32,True,A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9029000,GameInfo,PregameOdds,GameOdd[],,True,List of Pregame Odds from different sportsbooks,True,False
+9029000,GameInfo,LiveOdds,GameOdd[],,True,List of Live Odds from different sportsbooks,True,False
+9029000,GameInfo,HomeTeamScore,integer,,True,Score of the home team (updated after game ends to allow for resolving bets),True,True
+9029000,GameInfo,AwayTeamScore,integer,,True,Score of the away team (updated after game ends to allow for resolving bets),True,True
+9029000,GameInfo,TotalScore,integer,,True,Total scored points in the game (updated after game ends to allow for resolving bets),True,True
+9029000,GameInfo,AlternateMarketPregameOdds,GameOdd[],,True,List of Alternate Market GameOdds from different sportsbooks (such as 1st-half; 1st-qtr; etc),True,True
+9030000,GameOdd,GameOddId,integer,32,False,Unique ID of this odd,True,False
+9030000,GameOdd,Sportsbook,string,25,False,Name of sportsbook,True,True
+9030000,GameOdd,GameId,integer,32,False,The unique ID of the game,True,False
+9030000,GameOdd,Created,datetime,,False,The timestamp of when these odds were first created; based on US Eatern Time (EST/EDT).,True,False
+9030000,GameOdd,Updated,datetime,,False,The timestamp of when these odds were last updated; based on US Eatern Time (EST/EDT). If these are the latest odds for this game; and they have not been updated within the last few minutes; then it indicates that there were problems connecting to the sportsbook.,True,False
+9030000,GameOdd,HomeMoneyLine,integer,32,True,The sportsbook's money line for the home team,True,True
+9030000,GameOdd,AwayMoneyLine,integer,32,True,The sportsbook's money line for the away team,True,True
+9030000,GameOdd,DrawMoneyLine,integer,32,True,The sportsbook's money line for a draw,True,True
+9030000,GameOdd,HomePointSpread,decimal,32,True,The sportsbook's point spread for the home team,True,True
+9030000,GameOdd,AwayPointSpread,decimal,32,True,The sportsbook's point spread for the away team,True,True
+9030000,GameOdd,HomePointSpreadPayout,integer,32,True,The sportsbook's point spread payout for the home team,True,True
+9030000,GameOdd,AwayPointSpreadPayout,integer,32,True,The sportsbook's point spread payout for the away team,True,True
+9030000,GameOdd,OverUnder,decimal,32,True,The sportsbook's total points scored over under for the game,True,True
+9030000,GameOdd,OverPayout,integer,32,True,The sportsbook's payout for the over,True,True
+9030000,GameOdd,UnderPayout,integer,32,True,The sportsbook's payout for the under,True,True
+9030000,GameOdd,SportsbookId,integer,32,True,Unique ID of the sportsbook,True,False
+9030000,GameOdd,SportsbookUrl,string,500,True,The URL for sportsbook event,True,False
+9030000,GameOdd,HomeTeamAsianHandicap,decimal,32,True,The sportsbook's asian handicap for the home team,True,True
+9030000,GameOdd,AwayTeamAsianHandicap,decimal,32,True,The sportsbook's asian handicap for the away team,True,True
+9030000,GameOdd,HomeTeamAsianHandicapPayout,integer,32,True,The sportsbook's asian handicap payout for the home team covering,True,True
+9030000,GameOdd,AwayTeamAsianHandicapPayout,integer,32,True,The sportsbook's asian handicap payout for the away team covering,True,True
+9030000,GameOdd,AsianTotal,decimal,32,True,The sportsbook's asian total for the game,True,True
+9030000,GameOdd,AsianTotalOverPayout,integer,32,True,The sportsbook's payout for a result over the asian total,True,True
+9030000,GameOdd,AsianTotalUnderPayout,integer,32,True,The sportsbook's payout for a result under the asian total,True,True
+9030000,GameOdd,OddType,string,500,True,The market type of the odd (ex:live; pregame),True,False
+9031000,Headshot,PlayerID,integer,32,False,Unique ID of the Player (assigned by SportsDataIO).,True,False
+9031000,Headshot,Name,string,100,True,Name of Player.,True,False
+9031000,Headshot,TeamID,integer,32,True,Unique ID of the Team the player belongs to (assigned by SportsDataIO).,True,False
+9031000,Headshot,Team,string,10,True,Name of the team the player belongs to.,True,False
+9031000,Headshot,Position,string,10,True,Position player plays.,True,False
+9031000,Headshot,PreferredHostedHeadshotUrl,string,500,True,The player's preferred hosted headshot URL. This returns the headshot with transparent background; if available.,True,False
+9031000,Headshot,PreferredHostedHeadshotUpdated,datetime,,True,The last updated date of the player's preferred hosted headshot.,True,False
+9031000,Headshot,HostedHeadshotWithBackgroundUrl,string,500,True,The player's hosted headshot URL.,True,False
+9031000,Headshot,HostedHeadshotWithBackgroundUpdated,datetime,,True,The last updated date of the player's hosted headshot.,True,False
+9031000,Headshot,HostedHeadshotNoBackgroundUrl,string,500,True,The player's transparent background hosted headshot URL.,True,False
+9031000,Headshot,HostedHeadshotNoBackgroundUpdated,datetime,,True,The last updated date of the player's transparent background hosted headshot.,True,False
+9032000,CanceledMembership,CanceledMembershipId,integer,32,False,Unique ID of the canceled membership.,True,False
+9032000,CanceledMembership,MembershipId,integer,32,False,The unique ID of the membership which is being canceled; should be used to find memberships which may be safely deleted.,True,False
+9032000,CanceledMembership,TeamId,integer,32,False,The Team Id related to this canceled membership.,True,False
+9032000,CanceledMembership,PlayerID,integer,32,False,The Player Id related to this canceled membership.,True,False
+9032000,CanceledMembership,Created,datetime,,False,The date and time when this Canceled Membership was created.,True,False
+9033000,PlayoffAggregateScore,TeamA_Id,integer,32,False,Id of one of the teams.  Team A is determined by the home team in the first leg; and remains set through the life of the record.,True,False
+9033000,PlayoffAggregateScore,TeamA_AggregateScore,integer,32,False,Aggregate score of team A.,True,False
+9033000,PlayoffAggregateScore,TeamB_Id,integer,32,False,Id of one of the teams.  Team B is determined by the away team in the first leg; and remains set through the life of the record.,True,False
+9033000,PlayoffAggregateScore,TeamB_AggregateScore,integer,32,False,Aggregate score of team A.,True,False
+9033000,PlayoffAggregateScore,WinningTeamId,integer,32,False,Team Id of the team which wins the home-and-home matchup.,True,False
+9033000,PlayoffAggregateScore,Created,datetime,,False,Date and time the record was created.,True,False
+9033000,PlayoffAggregateScore,Updated,datetime,,False,Date and time the record was updated.,True,False
+9034000,DfsSlate,SlateID,integer,32,False,Unique ID of a Slate (assigned by SportsDataIO).,True,False
+9034000,DfsSlate,Operator,string,20,True,The name of the operator who is running contests for this slate. Possible values: FanDuel; DraftKings; Yahoo; FantasyDraft; etc.,True,False
+9034000,DfsSlate,OperatorSlateID,integer,32,True,Unique ID of a slate (assigned by the operator).,True,False
+9034000,DfsSlate,OperatorName,string,50,True,The name of the slate (assigned by the operator). Possible values: Main; Express; Arcade; Late Night; etc.,True,False
+9034000,DfsSlate,OperatorDay,date,,True,The day (in UTC) that the slate begins (assigned by the operator).,True,False
+9034000,DfsSlate,OperatorStartTime,datetime,,True,The date/time (in UTC) that the slate begins (assigned by the operator).,True,False
+9034000,DfsSlate,NumberOfGames,integer,32,True,The number of actual games that this slate covers.,True,False
+9034000,DfsSlate,IsMultiDaySlate,boolean,,True,Whether this slate uses games that take place on different days.,True,False
+9034000,DfsSlate,RemovedByOperator,boolean,,True,Indicates whether this slate was removed/deleted by the operator.,True,False
+9034000,DfsSlate,OperatorGameType,string,50,True,The game type of the slate. Will often be null as most operators only have one game type.,True,False
+9034000,DfsSlate,DfsSlateGames,DfsSlateGame[],,True,The games that are included in this slate,True,False
+9034000,DfsSlate,DfsSlatePlayers,DfsSlatePlayer[],,True,The players that are included in this slate,True,False
+9034000,DfsSlate,SlateRosterSlots,string[],,True,The positions that need to be filled for this particular slate,True,False
+9034000,DfsSlate,SalaryCap,integer,,True,The salary cap for the current slate (is null for slates with no salary cap such a Tiers gametypes),True,False
+9034000,DfsSlate,CompetitionId,integer,,True,The Id of the competition related to this slate (Premier League; Champions League; etc.),True,False
+9035000,DfsSlateGame,SlateGameID,integer,32,False,Unique ID of a SlateGame (assigned by SportsDataIO).,True,False
+9035000,DfsSlateGame,SlateID,integer,32,False,The SlateID that this SlateGame refers to.,True,False
+9035000,DfsSlateGame,GameID,integer,32,True,The SportsDataIO GameID that this SlateGame refers to. This points to data in the respective sports' schedule/game/box score feeds.,True,False
+9035000,DfsSlateGame,Game,Game,,True,The details of the Game that this SlateGame refers to.,True,False
+9035000,DfsSlateGame,OperatorGameID,integer,32,True,Unique ID of a SlateGame (assigned by the operator).,True,False
+9035000,DfsSlateGame,RemovedByOperator,boolean,,True,Indicates whether this game was removed/deleted by the operator.,True,True
+9048000,GameOddOutcome,GameOddId,integer,32,False,Unique ID of this odd,True,False
+9048000,GameOddOutcome,GameOddResultTypeId,integer,32,True,The GameOddResultType of this outcome as an integer,True,False
+9048000,GameOddOutcome,GameOddResultType,string,100,True,The string identifier of the GameOddResultType of this outcome (e.g. Won; Lost; Push; Not Resulted; Incomplete),True,False
+9048000,GameOddOutcome,OddType,string,500,True,The market type of the odd (ex: live; pregame; 1st-5th Inning; etc),True,False
+9048000,GameOddOutcome,GameOddType,string,100,True,The GameOddOutcomeType of this outcome as a string,True,False
+9048000,GameOddOutcome,BetValue,decimal,32,True,The value that was bet in this outcome (if applicable),True,False
+9048000,GameOddOutcome,ActualValue,decimal,32,True,The value that actually occurred in game (if applicable),True,False
+9036000,DfsSlatePlayer,SlatePlayerID,integer,32,False,Unique ID of a SlatePlayer (assigned by SportsDataIO).,True,False
+9036000,DfsSlatePlayer,SlateID,integer,32,False,The SlateID that this SlatePlayer refers to.,True,False
+9036000,DfsSlatePlayer,SlateGameID,integer,32,True,The SlateGameID that this SlatePlayer refers to.,True,False
+9036000,DfsSlatePlayer,PlayerID,integer,32,True,The SportsDataIO PlayerID that this SlatePlayer refers to. This points to data in the respective sports' player feeds.,True,False
+9036000,DfsSlatePlayer,PlayerGameProjectionStatID,integer,32,True,The SportsDataIO StatID that this SlatePlayer refers to. This points to data in the respective sports' projected player game stats feeds.,True,False
+9036000,DfsSlatePlayer,OperatorPlayerID,string,25,True,Unique ID of the Player (assigned by the operator).,True,False
+9036000,DfsSlatePlayer,OperatorSlatePlayerID,string,50,True,Unique ID of the SlatePlayer (assigned by the operator).,True,False
+9036000,DfsSlatePlayer,OperatorPlayerName,string,50,True,The player's name (assigned by the operator).,True,False
+9036000,DfsSlatePlayer,OperatorPosition,string,10,True,The player's eligible positions for the contest (assigned by the operator).,True,False
+9036000,DfsSlatePlayer,OperatorSalary,integer,32,True,The player's salary for the contest (assigned by the operator).,True,False
+9036000,DfsSlatePlayer,OperatorRosterSlots,string[],,True,The player's eligible positions to be played in the contest (assigned by the operator). This would include UTIL; etc plays for those that are eligible.,True,False
+9036000,DfsSlatePlayer,RemovedByOperator,boolean,,True,Indicates whether this player was removed/deleted by the operator.,True,True
+9036000,DfsSlatePlayer,Team,string,12,True,Name of the team to which the player is associated.,True,False
+9036000,DfsSlatePlayer,TeamID,integer,32,True,Unique ID of the Team to which the player is associated.,True,False
+9049000,GameOddResult,GameOddID,integer,32,False,Unique ID of this odd,True,False
+9049000,GameOddResult,Sportsbook,string,25,False,Name of sportsbook,True,True
+9049000,GameOddResult,GameID,integer,32,False,The unique ID of the game,True,False
+9049000,GameOddResult,Created,datetime,,False,The timestamp of when these odds were first created; based on US Eatern Time (EST/EDT).,True,False
+9049000,GameOddResult,Updated,datetime,,False,The timestamp of when these odds were last updated; based on US Eatern Time (EST/EDT). If these are the latest odds for this game; and they have not been updated within the last few minutes; then it indicates that there were problems connecting to the sportsbook.,True,False
+9049000,GameOddResult,HomeMoneyLine,integer,32,True,The sportsbook's money line for the home team,True,True
+9049000,GameOddResult,AwayMoneyLine,integer,32,True,The sportsbook's money line for the away team,True,True
+9049000,GameOddResult,HomePointSpread,decimal,32,True,The sportsbook's point spread for the home team,True,True
+9049000,GameOddResult,AwayPointSpread,decimal,32,True,The sportsbook's point spread for the away team,True,True
+9049000,GameOddResult,HomePointSpreadPayout,integer,32,True,The sportsbook's point spread payout for the home team,True,True
+9049000,GameOddResult,AwayPointSpreadPayout,integer,32,True,The sportsbook's point spread payout for the away team,True,True
+9049000,GameOddResult,OverUnder,decimal,32,True,The sportsbook's total points scored over under for the game,True,True
+9049000,GameOddResult,OverPayout,integer,32,True,The sportsbook's payout for the over,True,True
+9049000,GameOddResult,UnderPayout,integer,32,True,The sportsbook's payout for the under,True,True
+9049000,GameOddResult,SportsbookID,integer,32,True,Unique ID of the sportsbook,True,False
+9049000,GameOddResult,SportsbookUrl,string,500,True,The URL for sportsbook event,True,False
+9049000,GameOddResult,OddType,string,50,True,The odd type of this specific odd,True,False
+9049000,GameOddResult,GameOddOutcomeResults,GameOddOutcome[],,True,The list of outcomes under this Game Odd Record with results,True,False
+9037000,Sportsbook,SportsbookID,int,32,False,The unique identifier of the sportsbook,True,False
+9037000,Sportsbook,Name,string,50,False,The name of the sportsbooks,True,True
+9050000,GameInfoResult,GameID,integer,32,False,The unique ID of the game.,True,False
+9050000,GameInfoResult,Season,integer,32,False,The calendar year of the season during which this game occurs.,True,False
+9050000,GameInfoResult,SeasonType,integer,32,False,The type of season that this record corresponds to (1=Regular Season; 2=Preseason; 3=Postseason; 4=Offseason; 5=AllStar).,True,False
+9050000,GameInfoResult,Day,date,,True,The day that the game is scheduled to be played in UTC.,True,False
+9050000,GameInfoResult,DateTime,datetime,,True,The date/time that the game is scheduled to be played in UTC.,True,False
+9050000,GameInfoResult,Status,string,25,True,Indicates the game's status. Possible values include: Scheduled; InProgress; Break; Final; Awarded; Postponed; Canceled; Suspended. If a game is called off before it starts; the Status is set to Postponed; until a new date/time is scheduled; at which point; the DateTime is updated; and the Status is set back to Scheduled. If a game has already started; and temporarily interrupted; it's Status is set to Suspended; until it either resumes; or gets postponed and replayed at a later date. If the game is at halftime; then the Status will be Break. Awarded is used in cases where a game is decided on the so called "green table." That means that a game was decided by the Federation/League to one team for a reason. This can include situations like riots; where the opponent team gets 3:0 win awarded as punishment. Awarded is also used when a club withdraws during the season from the competition then all the remaining matches getting awarded 3:0.,True,False
+9050000,GameInfoResult,AwayTeamID,integer,32,True,The TeamId of the away team.,True,False
+9050000,GameInfoResult,HomeTeamID,integer,32,True,The TeamId of the home team.,True,False
+9050000,GameInfoResult,AwayTeamName,string,50,True,The name of the away team.,True,False
+9050000,GameInfoResult,HomeTeamName,string,50,True,The name of the home team.,True,False
+9050000,GameInfoResult,GlobalGameID,integer,32,False,A globally unique ID for this game. This value is guaranteed to be unique across all sports/leagues.,False,False
+9050000,GameInfoResult,GlobalAwayTeamID,integer,32,True,A globally unique ID for the away team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9050000,GameInfoResult,GlobalHomeTeamID,integer,32,True,A globally unique ID for the home team. This value is guaranteed to be unique across all sports/leagues.,False,False
+9050000,GameInfoResult,PregameOdds,GameOddResult[],,True,List of Pregame GameOdds from different sportsbooks with results,True,False
+9050000,GameInfoResult,HomeTeamScore,integer,32,True,Score of the home team (updated after game ends to allow for resolving bets),True,True
+9050000,GameInfoResult,AwayTeamScore,integer,32,True,Score of the away team (updated after game ends to allow for resolving bets),True,True
+9050000,GameInfoResult,TotalScore,integer,32,True,Total scored points in the game (updated after game ends to allow for resolving bets),True,True
+9050000,GameInfoResult,RoundID,integer,32,False,The RoundId of the round that this game is associated with.,True,False
+9050000,GameInfoResult,Week,integer,32,True,The week during the season/round in which this game occurs.,True,False
+9050000,GameInfoResult,AlternateMarketPregameOdds,GameOddResult[],,True,List of Alternate Market GameOdds from different sportsbooks (such as 1st-half; 1st-qtr; etc) with results,True,False
+9050000,GameInfoResult,Period,string,20,True,The final period of the game. Possible values: Regular = Game ended in 90 minutes of regular time; ExtraTime = Game ended in extra time / overtime; PenaltyShootout = Game finished in penalty shootout time,True,False
+9050000,GameInfoResult,Clock,integer,32,True,The clock for the game if it is in progress. If the games hasn't started or the game is over; then this will be NULL.,True,False
+9050000,GameInfoResult,Winner,string,10,True,The winner of the game. Possible values include: AwayTeam; HomeTeam; Draw,True,True
+9050000,GameInfoResult,AwayTeamScorePeriod1,integer,32,True,The first period score of the away team.,True,True
+9050000,GameInfoResult,AwayTeamScorePeriod2,integer,32,True,The second period score of the away team.,True,True
+9050000,GameInfoResult,AwayTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the away team (if applicable).,True,True
+9050000,GameInfoResult,AwayTeamScorePenalty,integer,32,True,The penalty shootout score of the away team (if applicable).,True,True
+9050000,GameInfoResult,HomeTeamScorePeriod1,integer,32,True,The first period score of the home team.,True,True
+9050000,GameInfoResult,HomeTeamScorePeriod2,integer,32,True,The second period score of the home team.,True,True
+9050000,GameInfoResult,HomeTeamScoreExtraTime,integer,32,True,The extra time (overtime) score of the home team (if applicable).,True,True
+9050000,GameInfoResult,HomeTeamScorePenalty,integer,32,True,The penalty shootout score of the home team (if applicable).,True,True
+9050000,GameInfoResult,ClockExtra,integer,32,True,The added stoppage time minute the game is currently in. Will be null when game is not in stoppage time.,True,False
+9050000,GameInfoResult,ClockDisplay,string,50,True,A convenient string display of the current clock with format Clock+ClockExtra (ex 90+3),True,False
+9050000,GameInfoResult,IsClosed,boolean,,True,Indicates whether the game is over and the final score and stats have been verified and closed out,True,False
+9050000,GameInfoResult,LiveOdds,GameOddResult[],,True,List of Live Odds from different sportsbooks with results,False,False
+9038000,BettingEvent,BettingEventID,int,32,False,The unique identifier for this betting event,True,False
+9038000,BettingEvent,Name,string,32,True,The name of this betting event,True,False
+9038000,BettingEvent,Season,int,32,True,The season of this betting event,True,False
+9038000,BettingEvent,BettingEventTypeID,int,32,False,The identifier of the bet type of this betting event,True,False
+9038000,BettingEvent,BettingEventType,string,32,False,The name of the bet type of this betting event,True,False
+9038000,BettingEvent,StartDate,datetime,,True,The last day for betting on this event,True,False
+9038000,BettingEvent,Created,datetime,,True,The created date of this betting event,True,False
+9038000,BettingEvent,Updated,datetime,,True,The last updated date of this betting event,True,False
+9038000,BettingEvent,GameID,int,32,True,The GameId of the game tied to this event,True,False
+9038000,BettingEvent,GlobalGameID,int,32,True,The GlobalGameId of the game tied to this event,False,False
+9038000,BettingEvent,GameStatus,string,32,True,The status of the game tied to this event,True,True
+9038000,BettingEvent,Quarter,string,32,True,The quarter of the game tied to this event,True,True
+9038000,BettingEvent,AwayTeam,string,32,True,The Away Team Key of the game tied to this event,True,False
+9038000,BettingEvent,HomeTeam,string,32,True,The Home team key of the game tied to this event,True,False
+9038000,BettingEvent,AwayTeamID,int,32,True,The Away team ID of the game tied to this event,True,False
+9038000,BettingEvent,HomeTeamID,int,32,True,The Home team ID of the game tied to this event,True,False
+9038000,BettingEvent,GlobalAwayTeamID,int,32,True,The global away team id of the game tied to this event,False,False
+9038000,BettingEvent,GlobalHomeTeamID,int,32,True,The global home team id of the game tied to this event,False,False
+9038000,BettingEvent,AwayTeamScore,int,32,True,The away team score of the game tied to this event (post-game),True,True
+9038000,BettingEvent,HomeTeamScore,int,32,True,The home team score of the game tied to this event (post-game),True,True
+9038000,BettingEvent,TotalScore,int,32,True,The combined scores of the home and away team of the game tied to this event (post-game),True,True
+9038000,BettingEvent,AwayRotationNumber,int,32,True,The away team rotation number of the game tied to this event,True,False
+9038000,BettingEvent,HomeRotationNumber,int,32,True,The home team rotation number of the game tied to this event,True,False
+9038000,BettingEvent,BettingMarkets,BettingMarket[],32,True,The list of betting markets for this event,True,False
+9038000,BettingEvent,CompetitionId,int,32,True,The Id of the competition related to this betting event,True,False
+9039000,BettingMarket,BettingMarketID,int,32,False,The unique identifier of this betting market,True,False
+9039000,BettingMarket,BettingEventID,int,32,False,The unique identifier of the event this betting market exists for,True,False
+9039000,BettingMarket,BettingMarketTypeID,int,32,True,The BettingMarketTypeID of this market,True,True
+9039000,BettingMarket,BettingMarketType,string,32,True,The BettingMarketType of this market,True,True
+9039000,BettingMarket,BettingBetTypeID,int,32,True,The BettingBetTypeID of this market,True,True
+9039000,BettingMarket,BettingBetType,string,32,True,The BettingBetType of this market,True,True
+9039000,BettingMarket,BettingPeriodTypeID,int,32,True,The BettingPeriodTypeID of this market,True,True
+9039000,BettingMarket,BettingPeriodType,string,32,True,The BettingPeriodType of this market,True,True
+9039000,BettingMarket,Name,string,32,True,The generic name of this market,True,False
+9039000,BettingMarket,TeamID,int,32,True,The team id of the team tied to this market (if applicable),True,True
+9039000,BettingMarket,TeamKey,string,32,True,The team key of the team tied to this market (if applicable),True,True
+9039000,BettingMarket,PlayerID,int,32,True,The player id of the player tied to this market (if applicable),True,True
+9039000,BettingMarket,PlayerName,string,32,True,The name of the player tied to this market (if applicable),True,True
+9039000,BettingMarket,Created,datetime,32,True,The created date of this market,True,False
+9039000,BettingMarket,Updated,datetime,32,True,The last updated date of this market,True,False
+9039000,BettingMarket,AvailableSportsbooks,Sportsbook[],32,True,The sportsbooks that have had odds in this market,True,False
+9039000,BettingMarket,AnyBetsAvailable,bool,32,True,Shows if any bets are currently available for betting in this market,True,False
+9039000,BettingMarket,BettingOutcomes,BettingOutcome[],32,True,The list of betting outcomes from each sportsbook in this market,True,False
+9039000,BettingMarket,ConsensusOutcomes,ConsensusOutcome[],32,True,The single set of consesnus outcomes of this market,True,False
+9040000,BettingOutcome,BettingOutcomeID,int,32,True,The unique identifier of this outcome,True,False
+9040000,BettingOutcome,BettingMarketID,int,32,True,The unique identifier of the market this betting outcome exists for,True,False
+9040000,BettingOutcome,SportsBook,Sportsbook,32,True,The sportsbook offering this outcome for betting,True,False
+9040000,BettingOutcome,BettingOutcomeTypeID,int,32,True,The BettingOutcomeTypeID of this outcome,True,True
+9040000,BettingOutcome,BettingOutcomeType,string,32,True,The BettingOutcomeType of this outcome,True,True
+9040000,BettingOutcome,PayoutAmerican,int,32,True,The american odds payout ,True,True
+9040000,BettingOutcome,PayoutDecimal,decimal,32,True,The decimal odds payout,True,True
+9040000,BettingOutcome,Value,decimal,32,True,The number associated with the outcome (spread/total/etc),True,True
+9040000,BettingOutcome,Participant,string,32,True,The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds; we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.,True,False
+9040000,BettingOutcome,IsAvailable,bool,32,True,Is this outcome available for betting as of last update,True,False
+9040000,BettingOutcome,IsAlternate,bool,32,True,Is this an alternate value or the core value,True,False
+9040000,BettingOutcome,Created,datetime,32,True,The created date of the outcome,True,False
+9040000,BettingOutcome,Updated,datetime,32,True,The last updated date of the outcome,True,False
+9040000,BettingOutcome,Unlisted,datetime,32,True,The datetime the outcome was unlisted (no longer available for bets),True,False
+9040000,BettingOutcome,TeamID,int,32,True,The TeamID of the team assocated with this outcome (where applicable),True,True
+9040000,BettingOutcome,PlayerID,int,32,True,The PlayerID of the player assocated with this outcome (where applicable),True,True
+9040000,BettingOutcome,GlobalTeamID,int,32,True,The GlobalTeamID of the team assocated with this outcome (where applicable),False,True
+9040000,BettingOutcome,SportsbookUrl,string,500,True,The URL for sportsbook event,True,True
+9040000,BettingOutcome,IsInPlay,bool,1,True,Was this outcome created after the start time of the game (only applies when the betting event is of type game),True,False
+9041000,ConsensusOutcome,NumberOfSportsbooks,int,32,False,The number of sportsbooks odds that went into creating this consensus outcome,True,True
+9041000,ConsensusOutcome,BettingOutcomeID,int,32,True,The unique identifier of this outcome,True,False
+9041000,ConsensusOutcome,BettingMarketID,int,32,True,The unique identifier of the market this betting outcome exists for,True,False
+9041000,ConsensusOutcome,SportsBook,Sportsbook,32,True,The sportsbook offering this outcome for betting,True,False
+9041000,ConsensusOutcome,BettingOutcomeTypeID,int,32,True,The BettingOutcomeTypeID of this outcome,True,True
+9041000,ConsensusOutcome,BettingOutcomeType,string,32,True,The BettingOutcomeType of this outcome,True,True
+9041000,ConsensusOutcome,PayoutAmerican,int,32,True,The american odds payout ,True,True
+9041000,ConsensusOutcome,PayoutDecimal,decimal,32,True,The decimal odds payout,True,True
+9041000,ConsensusOutcome,Value,decimal,32,True,The number associated with the outcome (spread/total/etc),True,True
+9041000,ConsensusOutcome,Participant,string,32,True,The name of the participant (typically team or player) associated with the outcome. NOTE: This is provided by the sportsbook. In the case of Player odds; we highly recommend using PlayerID as names of players can be inconsistent between sportsbooks.,True,False
+9041000,ConsensusOutcome,IsAvailable,bool,32,True,Is this outcome available for betting as of last update,True,False
+9041000,ConsensusOutcome,IsAlternate,bool,32,True,Is this an alternate value or the core value,True,False
+9041000,ConsensusOutcome,Created,datetime,32,True,The created date of the outcome,True,False
+9041000,ConsensusOutcome,Updated,datetime,32,True,The last updated date of the outcome,True,False
+9041000,ConsensusOutcome,Unlisted,datetime,32,True,The datetime the outcome was unlisted (no longer available for bets),True,False
+9041000,ConsensusOutcome,TeamID,int,32,True,The TeamID of the team assocated with this outcome (where applicable),True,True
+9041000,ConsensusOutcome,PlayerID,int,32,True,The PlayerID of the player assocated with this outcome (where applicable),True,True
+9041000,ConsensusOutcome,GlobalTeamID,int,32,True,The GlobalTeamID of the team assocated with this outcome (where applicable),False,True
+9041000,ConsensusOutcome,SportsbookUrl,string,500,True,The URL for sportsbook event,True,True
+9041000,ConsensusOutcome,IsInPlay,bool,1,True,Was this outcome created after the start time of the game (only applies when the betting event is of type game),True,False
+9042000,BettingEntityMetadata,RecordId,integer,32,False,The id of the record.  Unique only within the same entity type (i.e. BettingMarketType Ids overlap with BettingBetType Ids),True,False
+9042000,BettingEntityMetadata,Name,string,100,False,A text value for the record (e.g. Moneyline; Player Prop; 3rd Quarter),True,False
+9042000,BettingEntityMetadata,Active,bool,32,True,Indicates if this record is intended to be used moving forward & is still in active use.,False,False
+9043000,BettingEntityMetadataCollection,BettingBetTypes,BettingEntityMetadata[],32,True,A list of the possible BettingBetTypes (e.g. Moneyline; Spread),True,False
+9043000,BettingEntityMetadataCollection,BettingMarketTypes,BettingEntityMetadata[],32,True,A list of the possible BettingMartketTypes (e.g. Game Line; Team Prop),True,False
+9043000,BettingEntityMetadataCollection,BettingPeriodTypes,BettingEntityMetadata[],32,True,A list of the possible BettingPeriodTypes (e.g. Full Game; Regulation Time; 1st Half),True,False
+9043000,BettingEntityMetadataCollection,BettingEventTypes,BettingEntityMetadata[],32,True,A list of the possible BettingEventTypes (e.g. Game; Future),True,False
+9043000,BettingEntityMetadataCollection,BettingOutcomeTypes,BettingEntityMetadata[],32,True,A list of the possible BettingOutcomeTypes (e.g. Home; Over),True,False
