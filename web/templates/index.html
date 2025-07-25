@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Football Analyzer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Футбольный анализатор</h1>
+    <div id="teams-list"></div>
+    
+    <script src="/static/js/app.js"></script>
+    <!-- Добавьте этот раздел перед закрывающим </body> -->
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h5>Управление сервером</h5>
+        </div>
+        <div class="card-body">
+            <button id="start-server" class="btn btn-success me-2">Запустить сервер</button>
+            <button id="stop-server" class="btn btn-danger me-2">Остановить сервер</button>
+            <button id="open-browser" class="btn btn-primary">Открыть в браузере</button>
+            <div class="mt-3" id="server-status"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Проверка статуса сервера
+    checkServerStatus();
+
+    // Кнопки управления
+    document.getElementById('start-server').addEventListener('click', startServer);
+    document.getElementById('stop-server').addEventListener('click', stopServer);
+    document.getElementById('open-browser').addEventListener('click', openBrowser);
+
+    async function checkServerStatus() {
+        try {
+            const response = await fetch('/api/health');
+            document.getElementById('server-status').innerHTML = 
+                '<div class="alert alert-success">Сервер работает</div>';
+        } catch {
+            document.getElementById('server-status').innerHTML = 
+                '<div class="alert alert-danger">Сервер остановлен</div>';
+        }
+    }
+
+    async function startServer() {
+        const response = await fetch('/api/server/start');
+        const result = await response.json();
+        alert(result.message);
+        checkServerStatus();
+    }
+
+    async function stopServer() {
+        const response = await fetch('/api/server/stop');
+        const result = await response.json();
+        alert(result.message);
+        checkServerStatus();
+    }
+
+    function openBrowser() {
+        window.open('http://127.0.0.1:8080', '_blank');
+    }
+});
+</script>
+</body>
+</html>

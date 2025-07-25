@@ -1,0 +1,99 @@
+import requests
+from datetime import datetime
+
+class OptimizedOddsAnalyzer:
+    def __init__(self):
+        self.API_KEY = "ec12a73194mshdb70514a3026ab3p1fe9e1jsn2efcb9d80fa4"
+        self.headers = {
+            "X-RapidAPI-Key": self.API_KEY,
+            "X-RapidAPI-Host": "api-football-v1.p.rapidapi.com"
+        }
+        # Только доступные типы ставок
+        self.available_bets = {
+            "match_winner": "Match Winner",
+            "double_chance": "Double Chance", 
+            "goals_ou": "Goals Over/Under",
+            "btts": "Both Teams Score"
+        }
+
+    def get_odds(self, fixture_id):
+        """Получаем коэффициенты для матча"""
+        try:
+            url = "https://api-football-v1.p.rapidapi.com/v3/odds"
+            params = {"fixture": fixture_id}
+            
+            response = requests.get(url, headers=self.headers, params=params)
+            response.raise_for_status()
+            return self._parse_odds(response.json())
+        except Exception as e:
+            print(f"Ошибка: {e}")
+            return None
+
+    def _parse_odds(self, data):
+        """Парсим только доступные ставки"""
+        if not data.get("response"):
+            return None
+            
+        bookmakers = data["response"][0]["bookmakers"]
+        parsed_odds = []
+        
+        for bookmaker in bookmakers:
+            for bet in bookmaker["bets"]:
+                if bet["name"] in self.available_bets.values():
+                    for odd in bet["values"]:
+                        parsed_odds.append({
+                            "bookmaker": bookmaker["name"],
+                            "type": bet["name"],
+                            "value": odd["value"],
+                            "odd": float(odd["odd"])
+                        })
+        return parsed_odds
+
+    def analyze_match(self, fixture_id):
+        """Анализ матча с доступными ставками"""
+        print(f"\nАнализ матча ID: {fixture_id}")
+        odds = self.get_odds(fixture_id)
+        
+        if not odds:
+            print("Коэффициенты не найдены")
+            return
+            
+        # Группируем по типам ставок
+        grouped = {}
+        for odd in odds:
+            if odd["type"] not in grouped:
+                grouped[odd["type"]] = []
+            grouped[odd["type"]].append(odd)
+        
+        # Выводим топ-3 по каждому типу
+        for bet_type, odds_list in grouped.items():
+            print(f"\n{bet_type}:")
+            sorted_odds = sorted(odds_list, key=lambda x: x["odd"], reverse=True)[:3]
+            for odd in sorted_odds:
+                print(f"{odd['bookmaker']}: {odd['value']} @ {odd['odd']:.2f}")
+
+    def add_fbref_data(self, fbref_report):
+
+        """Интеграция данных с FBref"""
+
+        self.stats = {
+
+            "shots": fbref_report["shots"],
+
+            "shots_on_target": fbref_report["shots_on_target"],
+
+            "gk_save_percent": fbref_report["gk_save_percent"]
+
+        }
+
+        print("\nДобавлены статистические данные:")
+
+        print(f"Удары: {self.stats['shots']}")
+
+        print(f"Точность ударов: {self.stats['shots_on_target']/self.stats['shots']:.0%}")
+
+
+if __name__ == "__main__":
+    analyzer = OptimizedOddsAnalyzer()
+    test_fixture = 1369607  # Замените на актуальный ID
+    analyzer.analyze_match(test_fixture)

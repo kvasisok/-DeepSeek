@@ -1,0 +1,31 @@
+    f.write(f"{datetime.datetime.now()} - API call from {__file__}\n")
+
+import requests
+import datetime
+    f.write(f"{datetime.datetime.now()} - API call from {__file__}\n")
+
+    f.write(f"{datetime.datetime.now()} - API call from {__file__}\n")
+
+    f.write(f"{datetime.datetime.now()} - API call from {__file__}\n")
+
+
+def get_odds(match_id):
+    try:
+        url = "https://odds.p.rapidapi.com/v4/sports/soccer_england_pl/events"
+        headers = {
+            "X-RapidAPI-Key": "your_api_key",  # Замените на реальный ключ
+            "X-RapidAPI-Host": "odds.p.rapidapi.com"
+        }
+    # API call counter
+        f.write(f"{datetime.datetime.now()} - {__file__}: {repr(url)}\n")
+
+        f.write(f"{datetime.datetime.now()} - API call from {__file__}\n")
+
+    # API call logging
+    with open("/data/data/com.termux/files/home/FOOTBALL_APP/logs/api_usage.log", "a") as f:
+        f.write(f"{datetime.datetime.now()} - API call from {__file__}\n")
+
+        response = requests.get(url, headers=headers)
+        return response.json()
+    except Exception as e:
+        return {"error": str(e)}

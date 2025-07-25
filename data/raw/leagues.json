@@ -1,0 +1,18 @@
+{
+  "leagues": {
+    "BSA": "Campeonato Brasileiro S\u00e9rie A",
+    "ELC": "Championship",
+    "PL": "Premier League",
+    "CL": "UEFA Champions League",
+    "EC": "European Championship",
+    "FL1": "Ligue 1",
+    "BL1": "Bundesliga",
+    "SA": "Serie A",
+    "DED": "Eredivisie",
+    "PPL": "Primeira Liga",
+    "CLI": "Copa Libertadores",
+    "PD": "Primera Division",
+    "WC": "FIFA World Cup"
+  },
+  "last_updated": "2025-07-17T23:35:31.867576"
+}

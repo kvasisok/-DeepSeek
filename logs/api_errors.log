@@ -1,0 +1,2 @@
+2025-07-23 20:54:50.211160 - ERROR in get_odds: 451 Client Error:  for url: https://odds.p.rapidapi.com/v4/sports/soccer_england_pl/events
+2025-07-23 21:09:44.775704 - ERROR in get_odds: 451 Client Error:  for url: https://api-football-v1.p.rapidapi.com/v3/odds?fixture=592872

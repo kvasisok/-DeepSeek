@@ -1,0 +1,7 @@
+{
+    "id": 12345,
+    "home_team_id": 55,
+    "away_team_id": 66,
+    "utc_date": "2023-11-15T19:00:00Z",
+    "status": "SCHEDULED"
+}
