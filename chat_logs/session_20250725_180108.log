@@ -1,0 +1,36 @@
+=== Чатовая сессия 25.07.2025 18:01 ===
+USER: cat <<'EOF' > /storage/emulated/0/Download/DeepSeek/ДиСи_моя_память.txt
+💾 ПАМЯТКА ДЛЯ ДИСИ (Football Predictor Project)
+
+🔑 ДОСТУП:
+- Репозиторий: /storage/emulated/0/FOOTBALL_APP
+- GitHub: git@github.com:kvasisok/-DeepSeek.git
+- API-ключ: ec12a73194mshdb70514a3026ab3p1fe9e1jsn2efcb9d80fa4
+
+📂 СТРУКТУРА:
+├── scripts/
+│   ├── api_utils.sh      # Лимиты запросов
+│   └── get_fixtures.sh   # Запрос матчей
+├── data/
+│   ├── latest_fixtures.json
+│   └── matches.db       # SQLite-база
+└── chat_logs/           # История чатов
+
+🔄 ТЕКУЩИЙ ЭТАП:
+1. Ожидание ответа от RapidAPI
+2. Парсинг FBREF как fallback:
+   curl -s "https://fbref.com/en/matches/..." | grep "Expected Goals"
+
+⚡ КОМАНДЫ ВОССТАНОВЛЕНИЯ:
+1. Обновить проект: 
+   cd ~/FOOTBALL_APP && git pull
+2. Проверить API:
+   curl -v -H "X-RapidAPI-Key: \$RAPIDAPI_KEY" "https://api-football-v1.p.rapidapi.com/v3/status"
+3. Запустить парсер FBREF:
+   python ~/FOOTBALL_APP/scripts/fbref_parser.py
+
+📎 ССЫЛКИ:
+- Логи чатов: /storage/emulated/0/FOOTBALL_APP/chat_logs/
+- Документация API: https://www.api-football.com/documentation-v3
+EOF
+ASSISTANT: 
