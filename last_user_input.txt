@@ -1,0 +1,1 @@
+echo "Тестовый ответ" > ~/FOOTBALL_APP/last_bot_response.txt
